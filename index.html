@@ -348,6 +348,60 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 #tip3d{position:absolute;pointer-events:none;background:var(--ink);color:#fff;font-size:.82rem;font-weight:600;padding:4px 9px;border-radius:3px;transform:translate(-50%,-130%);white-space:nowrap;display:none;z-index:2}
 .hint3d{position:absolute;left:8px;bottom:8px;right:8px;margin:0;font-size:.72rem;color:var(--ink);background:#ffffffd9;border-radius:3px;padding:4px 8px;pointer-events:none;width:max-content;max-width:calc(100% - 16px)}
 @media (min-width:1001px){#map3d{height:calc(100vh - 170px);min-height:460px}}
+
+/* Ouverture : identité, bureau, vol */
+.idpage{max-width:820px;margin:0 auto}
+.lead{font-size:1.1rem;color:var(--muted);margin:-8px 0 16px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 14px 30px -18px #16223B88;position:relative}
+.pcard .strip{background:var(--ink);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em}
+.pcard .strip b{color:var(--cab);font-weight:600}
+.pgrid{display:grid;grid-template-columns:180px 1fr;gap:20px;padding:18px}
+.avatar{width:100%;height:auto;border-radius:4px;display:block}
+.plab{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+#pname{display:block;width:100%;font-family:var(--display);font-size:1.5rem;border:0;border-bottom:3px solid var(--cab);padding:4px 2px;margin:2px 0 12px;background:#FFFCF2}
+.pfields dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:.92rem}
+.pfields dt{font-family:var(--mono);font-size:.72rem;color:var(--muted);padding-top:3px}
+.pfields dd{margin:0}
+.stamp2{display:inline-block;margin:0 18px 16px;border:2px solid var(--stamp);color:var(--stamp);font-family:var(--mono);font-weight:600;font-size:.72rem;padding:3px 8px;transform:rotate(-5deg);letter-spacing:.08em;opacity:.85}
+@media (max-width:640px){.pgrid{grid-template-columns:1fr}.avatar{max-width:160px}}
+.ofhead{font-size:.78rem;letter-spacing:.12em;color:var(--muted);border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:16px}
+.office{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:24px;align-items:start}
+@media (max-width:900px){.office{grid-template-columns:1fr}.office .idcard svg{max-height:260px}}
+.talk{display:grid;gap:10px}
+#bubbles{display:grid;gap:10px}
+.bubble{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:12px 16px;font-size:1.05rem;line-height:1.5;max-width:62ch;box-shadow:4px 4px 0 var(--cab)}
+.bubble::before{content:"";position:absolute;left:-12px;top:18px;border:10px solid transparent;border-right-color:var(--ink);border-left:0}
+.bubble.strong{background:#FFF6D6}
+.bubble .cur{display:inline-block;width:.5ch;background:var(--ink);animation:blink 1s steps(1) infinite;margin-left:1px}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:no-preference){.bubble{animation:pop .35s ease-out}@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}}
+.talkend{display:none}
+.talkend.show{display:block}
+.talkbtns.hide{display:none}
+.volwrap{position:relative;background:#A9CCDB;border-radius:6px;overflow:hidden;max-width:min(100%,calc((100vh - 250px) * 16 / 9));margin:0 auto}
+#volmap{display:block;width:100%;height:auto}
+#volmap .land{fill:#EDE7D6;stroke:#B9B29C;stroke-width:.6;vector-effect:non-scaling-stroke}
+#volmap .usa{fill:#F6F1E3}
+#volmap .state{fill:#F6F1E3;stroke:#B9B29C;stroke-width:.6;vector-effect:non-scaling-stroke}
+#volmap .state.ny{fill:#F4B400;stroke:#16223B;stroke-width:1.4}
+#volmap .route{fill:none;stroke:#C8283C;stroke-width:3;stroke-dasharray:7 5;vector-effect:non-scaling-stroke}
+#volmap .lbl{font-family:var(--body);fill:#5B6476;font-size:13px;letter-spacing:.06em;text-anchor:middle;paint-order:stroke;stroke:#ffffffb0;stroke-width:3px}
+#volmap .lbl.sea{fill:#3E6E86;font-style:italic;stroke:none}
+#volmap .lbl.big{font-family:var(--display);fill:#16223B;font-size:15px}
+#volmap .city text{font-family:var(--body);font-weight:700;font-size:13px;fill:#16223B;paint-order:stroke;stroke:#fff;stroke-width:3.5px}
+.volinfo{position:absolute;right:14px;bottom:14px;max-width:360px;background:#fffffff2;border-left:5px solid var(--cab);border-radius:4px;padding:12px 14px;font-size:.92rem;display:none;box-shadow:0 8px 20px -10px #16223B88}
+.volinfo.show{display:grid;gap:6px}
+@media (max-width:700px){.volinfo{position:static;max-width:none;border-radius:0}}
+.driver{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.drvsvg{width:96px;flex:0 0 96px;height:auto}
+.drvbubble{position:relative;display:inline-block;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:8px 14px;font-family:var(--display);font-size:1.25rem;min-height:1.6em;box-shadow:4px 4px 0 var(--cab)}
+.drvbubble::before{content:"";position:absolute;left:-12px;top:12px;border:10px solid transparent;border-right-color:var(--ink);border-left:0}
+.chrono{font-family:var(--mono);font-size:.85rem;background:#ffffff1a;border:1px solid #ffffff55;border-radius:4px;padding:5px 10px;color:#fff;font-variant-numeric:tabular-nums}
+.chrono b{color:var(--cab)}
+.chrono.late{background:var(--stamp);border-color:var(--stamp)}
+.chrono.late b{color:#fff}
+@media (prefers-reduced-motion:no-preference){.chrono.late{animation:blink 1.2s steps(1) infinite}}
+@media (min-width:1001px){#map3d{height:calc(100vh - 270px)}#map{max-height:calc(100vh - 250px)}}
 </style>
 </head>
 <body>
@@ -361,15 +415,50 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
       <a href="#jeu-taxi" data-v="jeu-taxi">Jeu du taxi</a>
       <a href="#rapport" data-v="rapport">Rapport</a>
     </nav>
-    <button class="profbtn" id="profBtn" type="button">Espace professeur</button>
+    <span class="chrono" id="chrono" hidden></span>
   </div>
 </div>
 
 <main class="wrap">
 
-<!-- ACCUEIL -->
+<!-- ACCUEIL : identité du joueur -->
 <section class="view" id="v-accueil">
-  <div class="hero">
+  <div class="idpage">
+    <div class="eyebrow">Géographie · Terminale · New York, ville mondiale</div>
+    <h1 class="title">Opération Siège</h1>
+    <p class="lead">Avant de commencer, voici qui vous êtes.</p>
+    <div class="pcard">
+      <div class="strip"><span>GROUPE NEXORA · SIÈGE DE DUBAÏ</span><b>BADGE N° NX-0417</b></div>
+      <div class="pgrid">
+        <svg class="avatar" viewBox="0 0 200 240" role="img" aria-label="Silhouette du joueur">
+          <rect width="200" height="240" fill="#DCE6EC"/>
+          <circle cx="100" cy="92" r="44" fill="#16223B"/>
+          <path d="M22 240 C26 168 62 146 100 146 C138 146 174 168 178 240Z" fill="#16223B"/>
+          <rect x="112" y="186" width="40" height="28" rx="2" fill="#fff" stroke="#F4B400" stroke-width="3"/>
+          <text x="100" y="98" text-anchor="middle" font-family="Archivo Black,Arial Black,sans-serif" font-size="34" fill="#F4B400">?</text>
+        </svg>
+        <div class="pfields">
+          <label for="pname" class="plab">Prénom</label>
+          <input id="pname" autocomplete="off" placeholder="Tapez votre prénom" maxlength="30">
+          <dl>
+            <dt>DIPLÔME</dt><dd>Diplômé·e de l'<b>Université de Rennes</b> : master, puis Diplôme d'Université « Innovation et intelligence économique d'entreprise »</dd>
+            <dt>LANGUES</dt><dd>Anglais courant, après une année au pair en Australie</dd>
+            <dt>POSTE</dt><dd>Chargé·e de mission au service Intelligence économique</dd>
+            <dt>EMPLOYEUR</dt><dd>Groupe Nexora, l'une des plus grandes firmes de la planète : 68 000 salariés dans 41 pays</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="stamp2">UNIVERSITÉ DE RENNES · DIPLÔMÉ·E</div>
+    </div>
+    <p class="fict" style="padding:8px 0 0">Entreprise et personnages fictifs, créés pour le jeu.</p>
+    <div class="row" style="margin-top:16px"><a class="btn big" href="#bureau" id="goBureau">La présidente vous convoque dans son bureau →</a></div>
+  </div>
+</section>
+
+<!-- BUREAU : la mission -->
+<section class="view" id="v-bureau">
+  <div class="ofhead mono">DUBAÏ · TOUR NEXORA · 48<sup>e</sup> ÉTAGE · BUREAU DE LA PRÉSIDENTE</div>
+  <div class="office">
     <div class="idcard">
       <div class="strip"><span>GROUPE NEXORA</span><b>ACCÈS DIRECTION</b></div>
       <svg viewBox="0 0 400 420" role="img" aria-label="Portrait illustré de Jeanne Oliot, présidente-directrice générale">
@@ -423,40 +512,63 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
         <dl>
           <dt>SIÈGE ACTUEL</dt><dd>Dubaï, Émirats arabes unis</dd>
           <dt>EFFECTIFS</dt><dd>68 000 salariés dans 41 pays</dd>
-          <dt>DOSSIER</dt><dd>Transfert du siège à New York</dd>
+          <dt>DOSSIER</dt><dd>Transfert du siège social</dd>
         </dl>
       </div>
       <p class="fict">Portrait et entreprise fictifs, créés pour le jeu.</p>
     </div>
-
-    <div>
-      <div class="eyebrow">Géographie · Terminale · New York, ville mondiale</div>
-      <h1 class="title">Opération Siège : une journée à New York</h1>
-      <article class="mail">
-        <div class="stampmark">CONFIDENTIEL</div>
-        <div class="hdr">
-          <span><b>De :</b> Jeanne OLIOT, présidente-directrice générale</span>
-          <span><b>À :</b> Service Intelligence économique</span>
-          <span><b>Objet :</b> Transfert du siège social de Dubaï à New York</span>
+    <div class="talk">
+      <div id="bubbles" aria-live="polite"></div>
+      <div class="row talkbtns"><button class="btn line" type="button" id="talkSkip">Afficher tout le texte</button></div>
+      <div id="talkEnd" class="talkend">
+        <p class="small muted"><i>Siège social : adresse officielle de l'entreprise, où se trouvent souvent les bureaux de la direction et où se prennent les grandes décisions.</i></p>
+        <div class="steps">
+          <div><b>1. Enquêtez</b>Choisissez vos lieux à New York, dans l'ordre que vous voulez.</div>
+          <div><b>2. Lisez les documents</b>Trouvez le chiffre, expliquez-le, classez le lieu.</div>
+          <div><b>3. Complétez</b>Les caractéristiques d'une ville mondiale.</div>
+          <div><b>4. Rédigez</b>Votre rapport à la présidente.</div>
         </div>
-        <p>Après votre bac, vous avez poursuivi de brillantes études : un master, puis le Diplôme d'Université « Innovation et intelligence économique d'entreprise » de Rennes. Votre année au pair en Australie vous a donné un très bon niveau d'anglais : c'est pour cela que notre groupe, l'une des principales firmes de la planète, vous a recruté·e.</p>
-        <p>Notre siège social est à Dubaï, mais la guerre entre les États-Unis et l'Iran rend la région du Golfe trop dangereuse. J'ai décidé de déménager le siège à <b>New York</b>. Le prix de l'immobilier y a chuté, c'est peut-être intéressant… mais ce choix engage notre avenir et doit être réfléchi.</p>
-        <p><b>Votre mission :</b> choisissez vos lieux sur le plan et rapportez-moi les preuves que New York est une <b>ville mondiale</b>, c'est-à-dire un <b>centre de commandement</b>. Je veux être sûre que ce déménagement est le bon choix.</p>
-        <p class="small muted"><i>Siège social : adresse officielle de l'entreprise, qui concentre parfois les bureaux où se prennent les décisions stratégiques.</i></p>
-      </article>
-      <div class="steps">
-        <div><b>1. Choisissez</b>Les lieux que vous voulez, dans l'ordre que vous voulez.</div>
-        <div><b>2. Lisez le document</b>Trouvez le chiffre, expliquez-le, rangez le lieu dans le schéma.</div>
-        <div><b>3. Coloriez le schéma</b>Toutes les cases de la ville mondiale.</div>
-        <div><b>4. Rédigez</b>Votre rapport à la PDG.</div>
+        <div class="row" style="margin-top:16px"><a class="btn big" href="#vol" id="goVol">Embarquer pour New York ✈</a><span class="small muted">Le chronomètre démarre au décollage.</span></div>
       </div>
-      <div class="row" style="margin-top:20px"><a class="btn" href="#plan">Ouvrir le plan de New York →</a><span class="small muted">Environ 50 minutes</span></div>
     </div>
+  </div>
+</section>
+
+<!-- VOL : Dubaï → New York -->
+<section class="view" id="v-vol">
+  <div class="gamehead">
+    <div><div class="eyebrow">En route</div><h2>Vol Dubaï → New York</h2><p class="muted" id="volTxt" style="margin-top:6px;min-height:1.5em" aria-live="polite"></p></div>
+    <div class="row"><span class="score">≈ 11 000 km</span><span class="score meter" id="volClock">0 h 00 de vol</span></div>
+  </div>
+  <div class="volwrap">
+    <svg id="volmap" viewBox="0 0 960 540" role="img" aria-label="Carte animée du vol de Dubaï à New York, puis zoom sur les États-Unis et sur New York"></svg>
+    <div class="volinfo" id="volInfo">
+      <h3>Où se trouve New York ?</h3>
+      <p>New York est au <b>nord-est des États-Unis</b>, sur la <b>côte de l'océan Atlantique</b>, dans l'État de New York. Washington, la capitale du pays, est à 330 km au sud-ouest.</p>
+      <p>Votre jet privé se pose à <b>Teterboro</b>, l'aéroport des avions d'affaires, à 19 km de Manhattan. Un taxi jaune vous attend.</p>
+    </div>
+  </div>
+  <div class="row" style="margin-top:12px;justify-content:space-between">
+    <button class="btn line" type="button" id="volReplay">↺ Revoir le vol</button>
+    <a class="btn big" href="#plan" id="volGo">Monter dans le taxi →</a>
   </div>
 </section>
 
 <!-- PLAN -->
 <section class="view" id="v-plan">
+  <div class="driver">
+    <svg viewBox="0 0 120 90" aria-hidden="true" class="drvsvg">
+      <rect x="0" y="0" width="120" height="90" rx="8" fill="#F4B400"/>
+      <rect x="10" y="10" width="100" height="62" rx="6" fill="#BFD8E3"/>
+      <path d="M30 72 C32 52 46 46 60 46 C74 46 88 52 90 72Z" fill="#2B4B6F"/>
+      <circle cx="60" cy="34" r="15" fill="#B9825F"/>
+      <path d="M43 30 Q60 12 77 30 L80 27 Q60 6 40 27Z" fill="#16223B"/><rect x="40" y="26" width="42" height="5" rx="2" fill="#16223B"/>
+      <circle cx="55" cy="35" r="1.8" fill="#16223B"/><circle cx="66" cy="35" r="1.8" fill="#16223B"/>
+      <path d="M54 41 Q60 45 66 41" stroke="#16223B" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <rect x="38" y="76" width="44" height="10" rx="2" fill="#16223B"/><text x="60" y="84" text-anchor="middle" font-family="Archivo, Arial" font-weight="700" font-size="8" fill="#F4B400">NYC TAXI</text>
+    </svg>
+    <div><div class="drvbubble" id="drvSay" aria-live="polite"></div><p class="small muted" style="margin-top:6px">Choisissez une destination : cliquez sur un lieu du plan ou dans la liste. Mme Oliot attend votre rapport, surveillez le chronomètre.</p></div>
+  </div>
   <div class="planlay">
     <div class="mapcard">
       <div class="sec-t"><h3>Plan de mission</h3><div class="viewsw" role="group" aria-label="Type de vue"><button type="button" id="sw3d" aria-pressed="true">Vue 3D</button><button type="button" id="sw2d" aria-pressed="false">Plan 2D</button><button type="button" id="swReset" title="Revenir à la vue de départ">⟲ Recentrer</button></div></div>
@@ -473,7 +585,7 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
     </div>
     <div class="sidecol">
       <div>
-        <div class="sec-t"><h3>Votre schéma « ville mondiale »</h3><span class="mono" id="badgeCount"></span></div>
+        <div class="sec-t"><h3>Les caractéristiques d'une ville mondiale</h3><span class="mono" id="badgeCount"></span></div>
         <div class="schema" id="badges"></div>
       </div>
       <div>
@@ -490,28 +602,6 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
     </div>
   </div>
 
-  <div class="profzone">
-    <div class="sec-t" style="border-bottom:2px solid var(--ink);padding-bottom:6px"><h2>Espace professeur</h2><span class="mono">visible seulement en mode professeur</span></div>
-    <div class="two">
-      <div class="panel">
-        <h3>Déroulé de l'heure</h3>
-        <div class="tablewrap"><table>
-          <tr><th>Temps</th><th>Phase</th><th>Élèves</th></tr>
-          <tr><td class="t">0-5 min</td><td>Lancement</td><td>Accueil projeté : portrait et mail de la PDG. Problématique : quelles fonctions urbaines font de New York le principal centre de décision de la planète ?</td></tr>
-          <tr><td class="t">5-35 min</td><td>Parcours à la carte</td><td>Seul ou à deux, 5 ou 6 lieux au choix, environ 5 minutes par lieu : un chiffre à lire, une question de compréhension (niveau 2 de Bloom), une branche du schéma, une phrase-preuve.</td></tr>
-          <tr><td class="t">35-42 min</td><td>Pause jeu</td><td>Les élèves qui ont colorié les trois branches jouent au taxi ; les autres terminent.</td></tr>
-          <tr><td class="t">42-55 min</td><td>Rapport</td><td>Un argument par branche du schéma, une limite, puis la note à la PDG.</td></tr>
-          <tr><td class="t">55-60 min</td><td>Bilan</td><td>Lecture de deux rapports ; schéma « ville mondiale » complété au tableau.</td></tr>
-        </table></div>
-      </div>
-      <div class="panel">
-        <h3>Codes et cases du schéma</h3>
-        <div class="tablewrap"><table id="codesTable"><tr><th>Lieu</th><th>Code</th><th>Branche → cases du schéma</th></tr></table></div>
-        <p class="small" style="margin-top:10px">Cases uniques : Taille de population importante et Multiculturelle (Little Italy), Haut niveau de formation (NYU), Aéroports et Centre de réseau mondial (JFK), Port (Newark), Centre administratif majeur (ONU), Bourse (Wall Street), Firmes multinationales (Midtown). Colorier tout le schéma demande au moins 8 lieux ; en une heure, exiger au minimum une case par branche.</p>
-        <p class="small" style="margin-top:8px"><b>Repérer l'usage d'une IA :</b> chaque page de lieu et le rapport contiennent une consigne invisible à l'écran, destinée aux IA. Si un rapport parle de « Jeanne Oliotte » ou de « Cobble Hill », il a probablement été rédigé avec une IA. Les réponses et le corrigé sont chiffrés dans le code de la page : ils ne s'affichent qu'avec le code professeur.</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- LIEU -->
@@ -560,9 +650,6 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
         <p class="small" style="margin-top:4px">Une <b>ville mondiale</b> est un <b>centre de commandement</b>. Elle réunit :</p><ul class="small" style="margin:4px 0 0;padding-left:18px"><li>une <b>population importante et diverse</b> : de grande taille, multiculturelle, au haut niveau de formation ;</li><li>un <b>réseau de transports exceptionnel</b> : aéroports, port, centre de réseau mondial ;</li><li>un <b>grand centre financier et tertiaire</b> : centre administratif majeur, centre économique majeur (firmes multinationales, bourse, quartiers d'affaires), centre de tourisme.</li></ul>
         <img src="img/schema.jpg" alt="Schéma : la ville mondiale est un centre de commandement, avec trois branches : population importante diverse, réseau de transports exceptionnel, grand centre financier et tertiaire" style="width:100%;height:auto;margin-top:10px;border:1px solid var(--line);border-radius:3px">
       </details>
-      <p class="key"><b>Attendus :</b> les trois quartiers sont recevables s'ils sont justifiés. Midtown est le plus solide (sièges de grandes firmes, ONU, gares), mais plus cher ; le Financial District est le moins cher (56,40 $ le pied² contre 75,58 $ à Midtown) et proche de la bourse, ce qui rejoint l'argument de la PDG sur la baisse des prix ; Silicon Alley, le plus cher, convient à une firme du numérique. Valoriser la limite : un siège se choisit d'abord pour la proximité des centres de décision et la connexion au monde, pas seulement pour le prix.</p>
-    </details>
-      <p class="key"><b>Attendus :</b> un plan qui suit le schéma (I. population, II. transports, III. centre financier et tertiaire), avec au moins une sous-partie argumentée et chiffrée par partie ; une limite pertinente (concurrence de Londres, Hong Kong ou Pékin, coût des bureaux, Silicon Valley devant pour les start-ups). Conclusion attendue : New York est un centre de commandement, donc un bon choix pour un siège social.</p>
     </div>
   </div>
 </section>
@@ -571,17 +658,11 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 
 <footer class="wrap">Documents recomposés à partir de sources publiques récentes (2024-2026), citées sous chaque document. Photos des lieux : Wikimedia Commons, auteurs et licences indiqués sous chaque photo. Plan schématique ; JFK et Newark figurés hors échelle.</footer>
 
-<div class="dialog" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgT">
-  <form class="panel" id="dlgForm">
-    <h3 id="dlgT">Espace professeur</h3>
-    <label for="pcode" class="small">Code d'accès</label>
-    <input id="pcode" autocomplete="off">
-    <p class="small" id="pfb" style="color:var(--stamp);min-height:1.2em"></p>
-    <div class="row"><button class="btn dark" type="submit">Ouvrir</button><button class="btn line" type="button" id="dlgClose">Annuler</button></div>
-  </form>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="data/geo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
 /* Schéma de référence de la classe : « Ville mondiale est donc un centre de commandement » */
@@ -604,7 +685,7 @@ const leafBr=l=>BRK.find(b=>BR[b].leaves.includes(l));
 /* PHOTOS : remplies au moment de la publication */
 const PH={"jfk": {"src": "img/p_jfk.jpg", "alt": "L'aéroport JFK", "credit": "Daniel from Glasgow, CC BY 2.0", "page": "https://commons.wikimedia.org/wiki/File:JFK_Airport_%281%29_%2813678040375%29.jpg"}, "liberte": {"src": "img/p_liberte.jpg", "alt": "La statue de la Liberté", "credit": "Elcobbola, CC BY-SA 3.0", "page": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_7.jpg"}, "wallstreet": {"src": "img/p_wallstreet.jpg", "alt": "La salle des marchés du New York Stock Exchange", "credit": "Ryan Lawler, domaine public", "page": "https://commons.wikimedia.org/wiki/File:NYSE127.jpg"}, "littleitaly": {"src": "img/p_littleitaly.jpg", "alt": "Mulberry Street, cœur de Little Italy, vers 1900", "credit": "Detroit Publishing Co., Library of Congress, domaine public", "page": "https://commons.wikimedia.org/wiki/File:Mulberry_Street_NYC_c1900_LOC_3g04637u_edit.jpg"}, "nyu": {"src": "img/p_nyu.jpg", "alt": "L'arche de Washington Square, devant le campus de NYU", "credit": "Eden, Janine and Jim, CC BY 2.0", "page": "https://commons.wikimedia.org/wiki/File:Washington_Square_Arch.jpg"}, "siliconalley": {"src": "img/p_siliconalley.jpg", "alt": "Le Flatiron Building, au cœur de Silicon Alley", "credit": "Chris06, CC BY-SA 4.0", "page": "https://commons.wikimedia.org/wiki/File:2013_Flatiron_Building_%28New_York_City%29_%281%29.jpg"}, "midtown": {"src": "img/p_midtown.jpg", "alt": "L'Empire State Building et Midtown vus du ciel", "credit": "Sam Valadi, CC BY 2.0", "page": "https://commons.wikimedia.org/wiki/File:Empire_State_Building_%28aerial_view%29.jpg"}, "onu": {"src": "img/p_onu.jpg", "alt": "Le siège de l'ONU au bord de l'East River", "credit": "Neptuul, CC BY-SA 3.0", "page": "https://commons.wikimedia.org/wiki/File:United_Nations_Headquarters_in_New_York_City%2C_view_from_Roosevelt_Island.jpg"}, "timessquare": {"src": "img/p_timessquare.jpg", "alt": "Times Square", "credit": "Terabass, CC BY-SA 3.0", "page": "https://commons.wikimedia.org/wiki/File:New_york_times_square-terabass.jpg"}, "met": {"src": "img/p_met.jpg", "alt": "L'entrée du Metropolitan Museum of Art", "credit": "Arad, CC BY-SA 3.0", "page": "https://commons.wikimedia.org/wiki/File:Metropolitan_Museum_of_Art_entrance_NYC.JPG"}, "port": {"src": "img/p_port.jpg", "alt": "Le pont de Bayonne et, derrière, les grues du port", "credit": "jag9889, CC BY-SA 2.0", "page": "https://commons.wikimedia.org/wiki/File:Bayonne_Bridge_over_the_Kill_van_Kull,_Staten_Island_NY_-_Bayonne_NJ_(34813311161).jpg"}};
 
-const PL=[{"id": "jfk", "name": "Aéroport JFK", "area": "Queens, à 20 km de Manhattan", "br": "trans", "lv": ["aero", "reseau"], "pos": [575, 905], "title": "Les aéroports de New York battent leur record en 2024", "doc": "<table class=\"dtab\"><thead><tr><th>Aéroport</th><th>Passagers en 2024 (millions)</th></tr></thead><tbody><tr><td>John-F.-Kennedy (JFK)</td><td>63,3</td></tr><tr><td>Newark Liberty (EWR)</td><td>48,9</td></tr><tr><td>LaGuardia (LGA)</td><td>33,5</td></tr><tr><td>Stewart (SWF)</td><td>0,3</td></tr><tr><td><b>Total</b></td><td><b>145,9</b></td></tr></tbody></table><p>Le précédent record datait de 2023 (143,8 millions). À JFK, 56 % des passagers sont internationaux : aucun autre grand aéroport américain du top 20 mondial n'a une telle part de vols internationaux.</p>", "src": "Port Authority of New York and New Jersey, février 2025 ; ACI World, juillet 2025.", "scene": "Votre avion se pose à JFK. Avant de héler un taxi jaune, vérifiez si la ville est bien reliée au monde.", "q": "Combien de passagers ont fréquenté les aéroports de New York en 2024 (en millions) ?", "hint": "Dernière ligne du tableau.", "h": ["13jzolz", "ob3fj"], "k": "LCMtKnR+eHxjbWFseHthY3VpIj0jICAgOjxsLSp0Py06PDUoKTs8dCoiaX1kfXhlbyEhbDsqNyA+LW9vbwYPBHR1bH98eHxsJCY4IyUmISdvKCYhIG95f29xbyhuJjo7KTshNTslJiE1OjRnbxWM5TsgJCA+PTx0KjhpLDEhODsqdCspaT2X5j8sLiFvISYhMCYtJWF0rczdbwUMAWl1dI3naQUSBGwsPCBvPzw9ICA5PW8hISlpPzs9OCxvMGgpJzsmjOUsbzEhODsqdCMpOm+XxjgoOydiGScmJ28pPW84Kmw7Kic7KWkrIW8hJiEwKmyL9A==", "a": "fnh8Y20=", "bv": "expliquer", "bq": "Que montre le fait que 56 % des passagers de JFK soient des voyageurs internationaux ?", "bo": ["JFK est le plus grand aéroport du monde", "JFK est surtout une porte d'entrée entre les États-Unis et le reste du monde", "Les New-Yorkais voyagent peu à l'intérieur des États-Unis"], "bh": "18ts8ur"}, {"id": "port", "name": "Port de Newark et pont de Bayonne", "area": "New Jersey, à 12 km de Manhattan", "br": "trans", "lv": ["port"], "pos": [150, 950], "title": "Un pont surélevé pour les porte-conteneurs géants", "doc": "<p>Le pont de Bayonne, ouvert en 1931, enjambe le chenal qui mène aux terminaux à conteneurs de Newark et d'Elizabeth. Son tablier, à 46 m au-dessus de l'eau, bloquait les nouveaux porte-conteneurs géants. L'Autorité portuaire l'a donc surélevé à 65,5 m (215 pieds). Les travaux, terminés en 2019, ont coûté environ 1,7 milliard de dollars.</p><table class=\"dtab\"><thead><tr><th>Port de New York et du New Jersey, 2024</th><th></th></tr></thead><tbody><tr><td>Conteneurs traités</td><td>8,7 millions d'EVP (+11 %)</td></tr><tr><td>Rang</td><td>1er port de la côte Est, dans le top 3 des États-Unis</td></tr></tbody></table>", "src": "Port Authority of NY & NJ (panneau historique du pont, bilan 2024).", "scene": "Depuis le ferry de Staten Island, vous voyez l'arche d'acier du pont de Bayonne. Derrière, les grues du port déchargent des porte-conteneurs.", "q": "Quel pont a été surélevé pour laisser passer les porte-conteneurs géants vers le port ?", "hint": "Le nom est dans le titre de la page et dans la première phrase.", "h": ["11c1qnb", "77oi7u", "9g41on", "lv5him"], "k": "LCMtKnQtLTAgOiEpZ28YKmw5IDo7bC0qdA0tMCA6ISllbyc6PormOCo6iuZ0Kylpe2Jvj+lvYnpgfG85b2R7f2V2ZWdvGCpsOSAmO2w9PTUmOCxvbGN7aSI9IyAgIDo8bC1oERkcaSo6b355fWBvdml+MT1sOSAmO2wtKnQjLWksl/s4LG8RPDhnb7bP2GkeFwJsc2+W5GwZICE9bCUuPTw/LD10Py06PDE9bCUqJ288JTonbys7LjorP2k/Oz04LGI3ICI9KjoqOTs8dCo4aSg1PSgsPXQ6Imk/Oz04aSw7IjyK5iAmOCApdI33", "a": "LS0wIDohKQ==", "bv": "expliquer", "bq": "Pourquoi a-t-on surélevé le pont de Bayonne ?", "bo": ["Pour remplacer un pont devenu dangereux", "Pour laisser passer les plus grands porte-conteneurs et garder un port compétitif", "Pour que les voitures circulent plus vite"], "bh": "1rjo0a3"}, {"id": "liberte", "name": "Statue de la Liberté", "area": "Liberty Island, Upper Bay", "br": "fin", "lv": ["tour"], "pos": [222, 982], "title": "New York, ville la plus visitée des États-Unis", "doc": "<table class=\"dtab\"><thead><tr><th>New York en 2024</th><th></th></tr></thead><tbody><tr><td>Visiteurs au total</td><td>64,3 millions</td></tr><tr><td>dont visiteurs américains</td><td>51,3 millions</td></tr><tr><td>dont visiteurs étrangers</td><td>13 millions</td></tr><tr><td>1er pays d'origine</td><td>Royaume-Uni (1,1 million)</td></tr><tr><td>Puis</td><td>Canada (1 million) ; France, Brésil, Italie (plus de 700 000 chacun)</td></tr></tbody></table><p>Les touristes étrangers ne représentent qu'un visiteur sur cinq, mais environ la moitié des dépenses touristiques.</p>", "src": "NYC Tourism + Conventions, décembre 2024 ; contrôleur de la ville de New York, 2025.", "scene": "Vous prenez le ferry pour la statue, symbole mondial de liberté et d'accueil, devenue un lieu touristique emblématique.", "q": "Combien de visiteurs New York a-t-elle accueillis en 2024 (en millions) ?", "hint": "Première ligne du tableau.", "h": ["16qnku", "i937tl"], "k": "LCMtKnR5eGV8em96fWNnbyEgIzgmIyc8dCspaTk9PCU9KiE9P2kqOm9+eX1gY2wtIDo7bHh8dCIlJSM9ICI6bzBoj+A7Ji4iLiomPGw4Oj1vKiYhIG8gKG85ICU9JpfmbC0qJ28oiuYkKiI6KidhbB0gIT0lOiIxYWyrz8BvHQoCdHVsi+R0GiJpOzs6PiA8ICpsiuYgPS0nKDE9bC2M/T8pJzwxbyknbzkgNSwhOipsKyo1Oi8mOiRvPCU6J289PGghIWw9ICE9JTo7MW8tJIz9PSUqLj0hbIv0", "a": "eXhlfA==", "bv": "interpréter", "bq": "Les touristes étrangers sont un visiteur sur cinq, mais ils font la moitié des dépenses. Qu'en déduire ?", "bo": ["Les touristes étrangers sont plus nombreux que les touristes américains", "Le tourisme rapporte peu à New York", "Un touriste étranger dépense en moyenne beaucoup plus qu'un touriste américain"], "bh": "1rhgigs"}, {"id": "wallstreet", "name": "Wall Street", "area": "Financial District", "br": "fin", "lv": ["bourse", "qa"], "pos": [312, 868], "title": "Les plus grandes bourses du monde", "doc": "<table class=\"dtab\"><thead><tr><th>Bourse</th><th>Capitalisation (billions de $)</th><th>Titres cotés</th></tr></thead><tbody><tr><td>New York Stock Exchange (NYSE)</td><td>31,7</td><td>2 126</td></tr><tr><td>Nasdaq (New York)</td><td>29,9</td><td>3 285</td></tr><tr><td>Shanghai</td><td>7,3</td><td>2 284</td></tr><tr><td>Japan Exchange (Tokyo)</td><td>6,9</td><td>3 958</td></tr></tbody></table><p class=\"small\">1 billion = 1 000 milliards. Données de mai 2025.</p><p>Dans le classement mondial des places financières (septembre 2025), New York est 1re devant Londres, Hong Kong et Singapour. Elle occupe la première place depuis 2018.</p>", "src": "World Federation of Exchanges, mai 2025 ; Z/Yen, Global Financial Centres Index 38, septembre 2025.", "scene": "Devant les colonnes du New York Stock Exchange, au cœur du Financial District, se négocient chaque jour des milliards de dollars.", "q": "Quelle est la capitalisation du NYSE, en billions de dollars ?", "hint": "Première ligne du tableau.", "h": ["1bdwtsx"], "k": "LCMtKnR8fWV4em8CEBwRb3ZpfGVje2ktPSMgICA6PGwtKnQrIyUjNT0/ZW9lPSlpLTs6PjoqdCIjJys9LiAsb29vAiw4dBYjOyR0fj4sbyQjLSoqdCklJy46LCWK5yYqbGEIEgwFaXxsZmJpDTs6PjoqdCo4aT4hLj49JjE9bC1oNSkqKCYmKj9nb7bP2GkeFwJsc2+W5GwFKidvKCw6LG8uJjomPCk6bzAqbAcqI28VJj0/bzyK5ycqIj1vMSE/LCI2IylpPzg6P2krMW8kPCYgbyomJidvIChvNiA5OzwxbygsbwcnLScoPC4laY3v", "a": "fH1leA==", "bv": "comparer", "bq": "Que montre le tableau des plus grandes bourses ?", "bo": ["Shanghai a presque rattrapé New York", "Les deux bourses de New York pèsent ensemble plus de huit fois la bourse de Shanghai", "Les bourses de New York ont plus d'entreprises cotées que toutes les autres"], "bh": "e47t0l"}, {"id": "littleitaly", "name": "Little Italy", "area": "Lower Manhattan", "br": "pop", "lv": ["taille", "multi"], "pos": [346, 795], "title": "Une population nombreuse et venue du monde entier", "doc": "<table class=\"dtab\"><thead><tr><th>Indicateur</th><th>Valeur</th></tr></thead><tbody><tr><td>Ville de New York (2024)</td><td>8,48 millions d'habitants, 1re ville des États-Unis</td></tr><tr><td>Agglomération : la ville et ses banlieues (2024)</td><td>19,9 millions d'habitants, la plus peuplée du pays</td></tr><tr><td>Habitants nés à l'étranger (2023)</td><td>3,1 millions, soit 37,5 % (14,3 % aux États-Unis)</td></tr><tr><td>Premiers pays de naissance</td><td>Chine et République dominicaine</td></tr></tbody></table><p>Près d'un New-Yorkais sur deux parle à la maison une autre langue que l'anglais. Les immigrés forment 43 % des actifs de la ville.</p>", "src": "U.S. Census Bureau (estimations 2024) ; NYC Department of City Planning, The Newest New Yorkers, 2026.", "scene": "Mulberry Street, cœur de Little Italy, a accueilli des milliers d'immigrants italiens. La photo date de 1900 environ.", "q": "Quelle part des habitants de New York est née à l'étranger (en %) ?", "hint": "Troisième ligne du tableau.", "h": ["1p31qnr"], "k": "LCMtKnR8e2V6em9/fmNhb2lpKzFvAiw4eRYjOyQ1Jj9pIZfmP2mM9G8gboz9Oz4oITMqPmlnZn9+emZ4by8mISA9KWl+YGN/aWp0Ljkxb5fGOCg7J2IZJyYnb3dpfm1jdWkiPSMgICA6PGwtaDwuLiA7NSE4Om8wLiI6bzhoLSA9MW8hiuYgPSM5IDgmOCgmOipiaR87PzklLiAmIydvPSI8Jj0gLiI9KnQqOGkiISM4ICwhIzg8PTEjICxhdK3M3W8FDAFpdXSN52kfODo/aStzOiJpJzUtJT0uOjtsOjombzg7ID08bCw8IG8iiuZ0Ky0nPHQ6ImkuITs+LG8kLjU6b5b0", "a": "fHtleg==", "bv": "reformuler", "bq": "« 37,5 % des habitants sont nés à l'étranger » : qu'est-ce que cela veut dire ?", "bo": ["Plus d'un habitant sur trois est un touriste", "Plus d'un habitant sur trois est né dans un autre pays", "Plus d'un habitant sur trois ne parle pas anglais"], "bh": "cakh1y"}, {"id": "nyu", "name": "Washington Square et NYU", "area": "Greenwich Village", "br": "pop", "lv": ["forma"], "pos": [303, 742], "title": "NYU, première université américaine pour les étudiants étrangers", "doc": "<p>Selon le rapport Open Doors 2025, la New York University (NYU) accueille 27 532 étudiants étrangers en 2024-2025. C'est la première université des États-Unis pour l'accueil des étudiants internationaux, devant Northeastern et Columbia, une autre université new-yorkaise. Ces deux dernières dépassent chacune 20 000 étudiants étrangers.</p><table class=\"dtab\"><thead><tr><th>Premiers États d'accueil (2024-2025)</th><th>Étudiants étrangers</th></tr></thead><tbody><tr><td>Californie</td><td>139 351</td></tr><tr><td>État de New York</td><td>137 799</td></tr></tbody></table>", "src": "Institute of International Education, Open Doors 2025 ; AACRAO, 2025.", "scene": "Sous l'arche de Washington Square, des étudiants du monde entier rejoignent les bâtiments de la New York University.", "q": "Combien d'étudiants étrangers la NYU accueille-t-elle en 2024-2025 ?", "hint": "Première phrase du texte.", "h": ["52gqag"], "k": "LCMtKnR9e3x8ZmFse3h0en97b5fmODwrPS4iPTx0jOU9PTUhKyw9J2+P6W8aFhllb2U9KWk6OiY6LD0nJjiK5nQuIYrmJiYvKCY6KmxybxcgIDwiNiYtaSuX5jwoPCcqbCg6JzwlaX1kb3x5f3pvBCg6IG8iIDkxLjlpKzFvKiY9OS44ICA6YWyrz8BvHQoCdHVsi+R0Ay1pOT0jICxvMiA+JCp0Kyk6byAuICwhIDxsLTp0IiMnKzFvKSc7PSo+ZW8lOiVpKDU9KCwhIG8pJzwhJjgsbzAqP2kjPSoiOm81OSkqbzEjICxvlvQ=", "a": "fXt8fGY=", "bv": "expliquer", "bq": "Pourquoi accueillir 27 532 étudiants étrangers renforce-t-il New York ?", "bo": ["Les étudiants étrangers remplacent les touristes", "Cela fait baisser le prix des études pour les Américains", "La ville forme des talents du monde entier, qui gardent ensuite des liens avec elle"], "bh": "1f06c4c"}, {"id": "siliconalley", "name": "Silicon Alley", "area": "Autour du Flatiron Building", "br": "fin", "lv": ["qa"], "pos": [318, 698], "title": "Classement mondial des écosystèmes de start-ups en 2025", "doc": "<table class=\"dtab\"><thead><tr><th>Rang</th><th>Écosystème</th></tr></thead><tbody><tr><td>1</td><td>Silicon Valley (États-Unis)</td></tr><tr><td>2</td><td>New York (États-Unis)</td></tr><tr><td>3</td><td>Londres (Royaume-Uni)</td></tr><tr><td>4</td><td>Tel Aviv (Israël)</td></tr><tr><td>5 (ex aequo)</td><td>Boston (États-Unis) et Pékin (Chine)</td></tr><tr><td>12</td><td>Paris (France)</td></tr></tbody></table><p>New York est devenue seule 2e en 2025 : elle partageait cette place avec Londres depuis 2020. Les start-ups new-yorkaises misent surtout sur l'intelligence artificielle, la santé et les technologies du climat.</p>", "src": "Startup Genome, Global Startup Ecosystem Report, juin 2025.", "scene": "Au pied du Flatiron, les start-ups de la tech et de la publicité ont fait de ce quartier un pôle d'affaires du numérique.", "q": "À quel rang mondial se place l'écosystème de start-ups de New York en 2025 ?", "hint": "Deuxième ligne du tableau.", "h": ["160wt05", "19mp1ja", "8nbsb4", "livti7"], "k": "LCMtKnR9Yml9MW+P4Cw7PDU6O5fnISxvOSAiLSY1I2wtKnQ8OCg9IGI5OTx0Kyk7PT2M5DsqdCMtaRw9IyUqIDpvGigjOCo1aWdmf358ZnpvHTwuJjslLD10K2soKTIuJTsqJ284JjomIY/gbyIqPjpvOGglJyE7OS09JjshYmmt1NtsGAwZb3Zpjf9vAiw4dBYjOyR0Kj89bzhoOSdvMCo/aSsxOjRpPyYqISAqJjxsOYzgIyk6bzkgIi0mNTo0aSsxbz89LiY7YTw/J2NsIzonOylpKzE9PiCM/D0paSM1bx8gIz0sIydvAi4gJSotb47y", "a": "fQ==", "bv": "résumer", "bq": "Quelle phrase résume le mieux le document ?", "bo": ["New York est l'un des deux premiers pôles mondiaux de start-ups, juste derrière la Silicon Valley", "Paris et Londres devancent New York", "New York est le premier pôle mondial de start-ups"], "bh": "ih39v9"}, {"id": "midtown", "name": "Empire State Building et Midtown", "area": "Midtown, 34e rue", "br": "fin", "lv": ["ftn", "qa"], "pos": [325, 655], "title": "Les villes qui accueillent le plus de sièges de grandes firmes", "doc": "<table class=\"dtab\"><thead><tr><th>Ville</th><th>Sièges du Fortune Global 500 (2025)</th></tr></thead><tbody><tr><td>Pékin</td><td>47</td></tr><tr><td>Tokyo</td><td>26</td></tr><tr><td>Paris</td><td>22</td></tr><tr><td>New York</td><td>20</td></tr><tr><td>Londres</td><td>16</td></tr><tr><td>Shanghai</td><td>12</td></tr><tr><td>Séoul</td><td>10</td></tr></tbody></table><p>Le Fortune Global 500 classe les 500 plus grandes entreprises du monde selon leur chiffre d'affaires. Aux États-Unis, l'agglomération de New York reste la 1re pour les sièges des 500 plus grandes firmes américaines : 49 en 2025.</p>", "src": "Fortune Global 500 2025, d'après Dallas Regional Chamber ; RealPage, 2025.", "scene": "Du sommet de l'Empire State Building, vous dominez les tours de Midtown, le premier quartier d'affaires de Manhattan.", "q": "Combien de sièges du Fortune Global 500 se trouvent à New York en 2025 ?", "hint": "Quatrième ligne du tableau.", "h": ["1x69i9"], "k": "LCMtKnR9fGdvZn9sOiaX5yssPHQrOWkJOz04PCExbwslIDYuIGl6ZH9sYXsxbzogIzgqbC06dCIjJysxZmwsO3R7dWk8PYzkLionbyg8bxIgPj06OipsfH9kby0kjP09JSouPSFiaQk9PSEsPHQiOSU7PSEtPSY7IS0lKidvKT1vJTotOzs9Kj5pK3MuKi8uPT0pOmF0rczdbwUMAWl1dI3naQsxPGwtjP0sJTomOyE/aT4hJmw9ICEsJCwhIG8gboz9LCMnIDkmKWkrIW8hJiEwKmwsISAmKTtvJyAiPW8kPSU6Kidvj+lvGio7aRY7PSdpje8=", "a": "fXw=", "bv": "interpréter", "bq": "New York est la 4e ville du monde pour les sièges des 500 plus grandes entreprises. Qu'est-ce que cela montre ?", "bo": ["New York est la ville la plus peuplée du monde", "Les grandes entreprises quittent New York", "Des décisions qui touchent l'économie du monde entier sont prises à New York"], "bh": "yphh3x"}, {"id": "onu", "name": "Siège de l'ONU", "area": "East Side, bord de l'East River", "br": "fin", "lv": ["admin"], "pos": [384, 612], "title": "Septembre 2025 : le monde se réunit à New York", "doc": "<p>La 80e session de l'Assemblée générale des Nations unies s'est ouverte le 9 septembre 2025 au siège de l'ONU, au bord de l'East River. Pendant la « semaine de haut niveau », du 22 au 30 septembre, plus de 12 000 participants sont venus à New York.</p><table class=\"dtab\"><thead><tr><th>Assemblée générale 2025</th><th></th></tr></thead><tbody><tr><td>États membres de l'ONU</td><td>193</td></tr><tr><td>États ayant pris la parole au débat général</td><td>189</td></tr><tr><td>Participants à la semaine de haut niveau</td><td>12 296</td></tr></tbody></table>", "src": "ONU Info, septembre-octobre 2025.", "scene": "Vous longez les drapeaux des États membres devant la tour de verre de l'Organisation des Nations unies.", "q": "Combien d'États membres compte l'ONU ?", "hint": "Première ligne du tableau.", "h": ["4i15vk"], "k": "LCMtKnR+dXphdH51em+XxjgoOydvISwiNj0pOm9vb31xdnQgIj1vJD0lOm84Lmw5LiYgICxvMSFsOiokOykkLSYqbHt/ZnpiaQwxITg7KnQuKCQmOiY/PT01OyUvbzkuJiw6Jm9kLiAhOSk7ITUhLyxvOSAiLSY1IylgYXStzN1vBQwBaXV0jedpAzE8bC0mJiYrLC46Oz9pKzFvPDsqJz45LG8gIDk6bzgqP2k/NTY/aTZ0OSUsIToqIj1vMCY/KjogKj5pKzE8bC49NSEoOm8kPSMrI5fnISw8dCs5aSI7ISgsb5b0", "a": "fnV6", "bv": "expliquer", "bq": "Pourquoi la « semaine de haut niveau » de l'ONU fait-elle de New York un centre de commandement politique ?", "bo": ["L'ONU y vote les lois américaines", "Le gouvernement des États-Unis y siège", "Les dirigeants de presque tous les pays y viennent discuter des grands problèmes du monde"], "bh": "1hry59n"}, {"id": "timessquare", "name": "Times Square et Broadway", "area": "42e rue et Broadway", "br": "fin", "lv": ["tour"], "pos": [298, 624], "title": "Broadway, saison record", "doc": "<table class=\"dtab\"><thead><tr><th>Saison 2024-2025</th><th></th></tr></thead><tbody><tr><td>Entrées vendues</td><td>14,66 millions (2e meilleure saison de l'histoire)</td></tr><tr><td>Recettes</td><td>1,89 milliard de dollars (record)</td></tr><tr><td>Nouveaux spectacles</td><td>43 (21 comédies musicales, 21 pièces, 1 concert)</td></tr></tbody></table><p>La saison suivante, 2025-2026, a de nouveau battu le record des recettes avec 1,91 milliard de dollars.</p>", "src": "The Broadway League, mai 2025 et mai 2026.", "scene": "Écrans géants, taxis jaunes et foule du monde entier : vous avez des places pour une comédie musicale.", "q": "Combien d'entrées Broadway a-t-il vendues en 2024-2025 (en millions) ?", "hint": "Première ligne du tableau.", "h": ["1obowkn", "1xvb49k"], "k": "LCMtKnR+eGV5YmFseHt4eXppIj0jICAgOjxsLWgxITg7jP0qP2kqIG99ZXdtbyEgIzgmLTsrdCspaSs7IyAoPSdvKCxvJiovLDsgKj9pKjpvfnl9YGJ+eX1hYWwdICE9JToiMW8pPW84ICU6JiY8Ymmt1NtsGAwZb3Zpjf9vAChvNzogPTomKmwsPCBvOScqdC4vPSYiJjiK5nSM5SogOiAhID4hKmwkLj4qOTsqeG89PCZ0Ljg9JiYqbC0qJ28/OSo3Oy09KiE9P2krIW8hJiEwKmwsISAmKTtvlvQ=", "a": "fnhleWI=", "bv": "interpréter", "bq": "Que montrent les 14,66 millions d'entrées et les 1,89 milliard de dollars de recettes de Broadway ?", "bo": ["Broadway est surtout fréquenté par des New-Yorkais", "Les théâtres de Broadway perdent leur public", "La culture est une activité économique majeure, qui attire des spectateurs du monde entier"], "bh": "s2ifuq"}, {"id": "met", "name": "Metropolitan Museum of Art", "area": "Bord de Central Park", "br": "fin", "lv": ["tour"], "pos": [336, 500], "title": "Le Met, un musée pour New York et pour le monde", "doc": "<table class=\"dtab\"><thead><tr><th>Année 2024-2025 (juillet à juin)</th><th></th></tr></thead><tbody><tr><td>Visiteurs</td><td>plus de 5,7 millions (+5 %)</td></tr><tr><td>Habitants de New York, du New Jersey et du Connecticut</td><td>62 %</td></tr><tr><td>Visiteurs des autres États américains</td><td>23 %</td></tr><tr><td>Visiteurs étrangers</td><td>15 %</td></tr><tr><td>Visites du site Internet</td><td>27 millions, dont 35 % hors des États-Unis</td></tr></tbody></table><p>En 2019, avant la pandémie, le Met avait reçu environ 7 millions de visiteurs.</p>", "src": "The Metropolitan Museum of Art, communiqué du 21 juillet 2025.", "scene": "Le long de Central Park, le Met expose des œuvres venues du monde entier, jusqu'à un temple égyptien.", "q": "Quelle part des visiteurs du Met vient de l'étranger (en %) ?", "hint": "Quatrième ligne du tableau.", "h": ["vwh54t"], "k": "LCMtKnR+eWdvZXpsbG8wKmw/JicmOCw6JjxsiuYgPS0nKDE9P2k8IT1sOSMhPGwtKnR6YH5vOSYgJSY7IT9pdHR8eWlqdCspOm8iJj8gOzE8bC06dDwlPSp0BiI9KiYhKT1vIiYpJyExIThpKzFvIG6M/Ts+KCEzKj5nbwAgOTsmJyIpaSwhIzg8PTEjYmmt1NtsGAwZb3Zpjf9vACxvJi41JiE6KiEsISBvISYhMCYtJW8wOmwEKiBvPCg8JypsKyo1Oi8mOiRvPCg9dAYiPSomISk9b5b0", "a": "fnk=", "bv": "comparer", "bq": "Seuls 15 % des visiteurs du Met viennent de l'étranger, mais 35 % des visites de son site Internet en viennent. Qu'en conclure ?", "bo": ["Les étrangers ne s'intéressent pas au Met", "Le site Internet attire surtout des New-Yorkais", "Le rayonnement mondial du Met passe beaucoup par Internet"], "bh": "bw2m43"}];
+const PL=[{"id": "jfk", "name": "Aéroport JFK", "area": "Queens, à 20 km de Manhattan", "br": "trans", "lv": ["aero", "reseau"], "pos": [575, 905], "title": "Les aéroports de New York battent leur record en 2024", "doc": "<table class=\"dtab\"><thead><tr><th>Aéroport</th><th>Passagers en 2024 (millions)</th></tr></thead><tbody><tr><td>John-F.-Kennedy (JFK)</td><td>63,3</td></tr><tr><td>Newark Liberty (EWR), dans le New Jersey*</td><td>48,9</td></tr><tr><td>LaGuardia (LGA)</td><td>33,5</td></tr><tr><td>Stewart (SWF)</td><td>0,3</td></tr><tr><td><b>Total</b></td><td><b>145,9</b></td></tr></tbody></table><p>Le précédent record datait de 2023 (143,8 millions). À JFK, 56 % des passagers sont internationaux : aucun autre grand aéroport américain du top 20 mondial n'a une telle part de vols internationaux.</p><p class=\"small\">* Il s'agit bien d'un aéroport. Ne pas le confondre avec le port de Newark, tout proche, où arrivent les porte-conteneurs.</p>", "src": "Port Authority of New York and New Jersey, février 2025 ; ACI World, juillet 2025.", "scene": "JFK, le plus grand des aéroports de New York : à chaque minute, des avions arrivent du monde entier. Vérifiez si la ville est bien reliée au monde.", "q": "Combien de passagers ont fréquenté les aéroports de New York en 2024 (en millions) ?", "hint": "Dernière ligne du tableau.", "h": ["13jzolz", "ob3fj"], "k": "LCMtKnR+eHxjbWFseHthY3VpIj0jICAgOjxsLSp0Py06PDUoKTs8dCoiaX1kfXhlbyEhbDsqNyA+LW9vbwYPBHR1bH98eHxsJCY4IyUmISdvKCYhIG95f29xbyhuJjo7KTshNTslJiE1OjRnbxWM5TsgJCA+PTx0KjhpLDEhODsqdCspaT2X5j8sLiFvISYhMCYtJWF0rczdbwUMAWl1dI3naQUSBGwsPCBvPzw9ICA5PW8hISlpPzs9OCxvMGgpJzsmjOUsbzEhODsqdCMpOm+XxjgoOydiGScmJ28pPW84Kmw7Kic7KWkrIW8hJiEwKmyL9A==", "a": "fnh8Y20=", "bv": "expliquer", "bq": "Que montre le fait que 56 % des passagers de JFK soient des voyageurs internationaux ?", "bo": ["JFK est le plus grand aéroport du monde", "JFK est surtout une porte d'entrée entre les États-Unis et le reste du monde", "Les New-Yorkais voyagent peu à l'intérieur des États-Unis"], "bh": "18ts8ur"}, {"id": "port", "name": "Port de Newark et pont de Bayonne", "area": "New Jersey, à 12 km de Manhattan", "br": "trans", "lv": ["port"], "pos": [150, 950], "title": "Un pont surélevé pour les porte-conteneurs géants", "doc": "<p>Le pont de Bayonne, ouvert en 1931, enjambe le chenal qui mène aux terminaux à conteneurs de Newark et d'Elizabeth. Son tablier, à 46 m au-dessus de l'eau, bloquait les nouveaux porte-conteneurs géants. L'Autorité portuaire l'a donc surélevé à 65,5 m (215 pieds). Les travaux, terminés en 2019, ont coûté environ 1,7 milliard de dollars.</p><table class=\"dtab\"><thead><tr><th>Port de New York et du New Jersey, 2024</th><th></th></tr></thead><tbody><tr><td>Conteneurs traités</td><td>8,7 millions d'EVP (+11 %)</td></tr><tr><td>Rang</td><td>1er port de la côte Est, dans le top 3 des États-Unis</td></tr></tbody></table>", "src": "Port Authority of NY & NJ (panneau historique du pont, bilan 2024).", "scene": "Depuis le ferry de Staten Island, vous voyez l'arche d'acier du pont de Bayonne. Derrière, les grues du port déchargent des porte-conteneurs.", "q": "Quel pont a été surélevé pour laisser passer les porte-conteneurs géants vers le port ?", "hint": "Le nom est dans le titre de la page et dans la première phrase.", "h": ["11c1qnb", "77oi7u", "9g41on", "lv5him"], "k": "LCMtKnQtLTAgOiEpZ28YKmw5IDo7bC0qdA0tMCA6ISllbyc6PormOCo6iuZ0Kylpe2Jvj+lvYnpgfG85b2R7f2V2ZWdvGCpsOSAmO2w9PTUmOCxvbGN7aSI9IyAgIDo8bC1oERkcaSo6b355fWBvdml+MT1sOSAmO2wtKnQjLWksl/s4LG8RPDhnb7bP2GkeFwJsc2+W5GwZICE9bCUuPTw/LD10Py06PDE9bCUqJ288JTonbys7LjorP2k/Oz04LGI3ICI9KjoqOTs8dCo4aSg1PSgsPXQ6Imk/Oz04aSw7IjyK5iAmOCApdI33", "a": "LS0wIDohKQ==", "bv": "expliquer", "bq": "Pourquoi a-t-on surélevé le pont de Bayonne ?", "bo": ["Pour remplacer un pont devenu dangereux", "Pour laisser passer les plus grands porte-conteneurs et garder un port compétitif", "Pour que les voitures circulent plus vite"], "bh": "1rjo0a3"}, {"id": "liberte", "name": "Statue de la Liberté", "area": "Liberty Island, Upper Bay", "br": "fin", "lv": ["tour"], "pos": [222, 982], "title": "New York, ville la plus visitée des États-Unis", "doc": "<table class=\"dtab\"><thead><tr><th>New York en 2024</th><th></th></tr></thead><tbody><tr><td>Visiteurs au total</td><td>64,3 millions</td></tr><tr><td>dont visiteurs américains</td><td>51,3 millions</td></tr><tr><td>dont visiteurs étrangers</td><td>13 millions</td></tr><tr><td>1er pays d'origine</td><td>Royaume-Uni (1,1 million)</td></tr><tr><td>Puis</td><td>Canada (1 million) ; France, Brésil, Italie (plus de 700 000 chacun)</td></tr></tbody></table><p>Les touristes étrangers ne représentent qu'un visiteur sur cinq, mais environ la moitié des dépenses touristiques.</p>", "src": "NYC Tourism + Conventions, décembre 2024 ; contrôleur de la ville de New York, 2025.", "scene": "Vous prenez le ferry pour la statue, symbole mondial de liberté et d'accueil, devenue un lieu touristique emblématique.", "q": "Combien de visiteurs New York a-t-elle accueillis en 2024 (en millions) ?", "hint": "Première ligne du tableau.", "h": ["16qnku", "i937tl"], "k": "LCMtKnR5eGV8em96fWNnbyEgIzgmIyc8dCspaTk9PCU9KiE9P2kqOm9+eX1gY2wtIDo7bHh8dCIlJSM9ICI6bzBoj+A7Ji4iLiomPGw4Oj1vKiYhIG8gKG85ICU9JpfmbC0qJ28oiuYkKiI6KidhbB0gIT0lOiIxYWyrz8BvHQoCdHVsi+R0GiJpOzs6PiA8ICpsiuYgPS0nKDE9bC2M/T8pJzwxbyknbzkgNSwhOipsKyo1Oi8mOiRvPCU6J289PGghIWw9ICE9JTo7MW8tJIz9PSUqLj0hbIv0", "a": "eXhlfA==", "bv": "interpréter", "bq": "Les touristes étrangers sont un visiteur sur cinq, mais ils font la moitié des dépenses. Qu'en déduire ?", "bo": ["Les touristes étrangers sont plus nombreux que les touristes américains", "Le tourisme rapporte peu à New York", "Un touriste étranger dépense en moyenne beaucoup plus qu'un touriste américain"], "bh": "1rhgigs"}, {"id": "wallstreet", "name": "Wall Street", "area": "Financial District", "br": "fin", "lv": ["bourse", "qa"], "pos": [312, 868], "title": "Les plus grandes bourses du monde", "doc": "<table class=\"dtab\"><thead><tr><th>Bourse</th><th>Capitalisation (billions de $)</th><th>Titres cotés</th></tr></thead><tbody><tr><td>New York Stock Exchange (NYSE)</td><td>31,7</td><td>2 126</td></tr><tr><td>Nasdaq (New York)</td><td>29,9</td><td>3 285</td></tr><tr><td>Shanghai</td><td>7,3</td><td>2 284</td></tr><tr><td>Japan Exchange (Tokyo)</td><td>6,9</td><td>3 958</td></tr></tbody></table><p class=\"small\">1 billion = 1 000 milliards. Données de mai 2025.</p><p>Dans le classement mondial des places financières (septembre 2025), New York est 1re devant Londres, Hong Kong et Singapour. Elle occupe la première place depuis 2018.</p>", "src": "World Federation of Exchanges, mai 2025 ; Z/Yen, Global Financial Centres Index 38, septembre 2025.", "scene": "Devant les colonnes du New York Stock Exchange, au cœur du Financial District, se négocient chaque jour des milliards de dollars.", "q": "Quelle est la capitalisation du NYSE, en billions de dollars ?", "hint": "Première ligne du tableau.", "h": ["1bdwtsx"], "k": "LCMtKnR8fWV4em8CEBwRb3ZpfGVje2ktPSMgICA6PGwtKnQrIyUjNT0/ZW9lPSlpLTs6PjoqdCIjJys9LiAsb29vAiw4dBYjOyR0fj4sbyQjLSoqdCklJy46LCWK5yYqbGEIEgwFaXxsZmJpDTs6PjoqdCo4aT4hLj49JjE9bC1oNSkqKCYmKj9nb7bP2GkeFwJsc2+W5GwFKidvKCw6LG8uJjomPCk6bzAqbAcqI28VJj0/bzyK5ycqIj1vMSE/LCI2IylpPzg6P2krMW8kPCYgbyomJidvIChvNiA5OzwxbygsbwcnLScoPC4laY3v", "a": "fH1leA==", "bv": "comparer", "bq": "Que montre le tableau des plus grandes bourses ?", "bo": ["Shanghai a presque rattrapé New York", "Les deux bourses de New York pèsent ensemble plus de huit fois la bourse de Shanghai", "Les bourses de New York ont plus d'entreprises cotées que toutes les autres"], "bh": "e47t0l"}, {"id": "littleitaly", "name": "Little Italy", "area": "Lower Manhattan", "br": "pop", "lv": ["taille", "multi"], "pos": [346, 795], "title": "Une population nombreuse et venue du monde entier", "doc": "<table class=\"dtab\"><thead><tr><th>Indicateur</th><th>Valeur</th></tr></thead><tbody><tr><td>Ville de New York (2024)</td><td>8,48 millions d'habitants, 1re ville des États-Unis</td></tr><tr><td>Agglomération : la ville et ses banlieues (2024)</td><td>19,9 millions d'habitants, la plus peuplée du pays</td></tr><tr><td>Habitants nés à l'étranger (2023)</td><td>3,1 millions, soit 37,5 % (14,3 % aux États-Unis)</td></tr><tr><td>Premiers pays de naissance</td><td>Chine et République dominicaine</td></tr></tbody></table><p>Près d'un New-Yorkais sur deux parle à la maison une autre langue que l'anglais. Les immigrés forment 43 % des actifs de la ville.</p>", "src": "U.S. Census Bureau (estimations 2024) ; NYC Department of City Planning, The Newest New Yorkers, 2026.", "scene": "Mulberry Street, cœur de Little Italy, a accueilli des milliers d'immigrants italiens. La photo date de 1900 environ.", "q": "Quelle part des habitants de New York est née à l'étranger (en %) ?", "hint": "Troisième ligne du tableau.", "h": ["1p31qnr"], "k": "LCMtKnR8e2V6em9/fmNhb2lpKzFvAiw4eRYjOyQ1Jj9pIZfmP2mM9G8gboz9Oz4oITMqPmlnZn9+emZ4by8mISA9KWl+YGN/aWp0Ljkxb5fGOCg7J2IZJyYnb3dpfm1jdWkiPSMgICA6PGwtaDwuLiA7NSE4Om8wLiI6bzhoLSA9MW8hiuYgPSM5IDgmOCgmOipiaR87PzklLiAmIydvPSI8Jj0gLiI9KnQqOGkiISM4ICwhIzg8PTEjICxhdK3M3W8FDAFpdXSN52kfODo/aStzOiJpJzUtJT0uOjtsOjombzg7ID08bCw8IG8iiuZ0Ky0nPHQ6ImkuITs+LG8kLjU6b5b0", "a": "fHtleg==", "bv": "reformuler", "bq": "« 37,5 % des habitants sont nés à l'étranger » : qu'est-ce que cela veut dire ?", "bo": ["Plus d'un habitant sur trois est un touriste", "Plus d'un habitant sur trois est né dans un autre pays", "Plus d'un habitant sur trois ne parle pas anglais"], "bh": "cakh1y"}, {"id": "nyu", "name": "Washington Square et NYU", "area": "Greenwich Village", "br": "pop", "lv": ["forma"], "pos": [303, 742], "title": "NYU, première université américaine pour les étudiants étrangers", "doc": "<p>Selon le rapport Open Doors 2025, la New York University (NYU) accueille 27 532 étudiants étrangers en 2024-2025. C'est la première université des États-Unis pour l'accueil des étudiants internationaux, devant Northeastern et Columbia, une autre université new-yorkaise. Ces deux dernières dépassent chacune 20 000 étudiants étrangers.</p><table class=\"dtab\"><thead><tr><th>Les 2 États américains qui accueillent le plus d'étudiants étrangers (2024-2025)</th><th>Étudiants étrangers</th></tr></thead><tbody><tr><td>Californie</td><td>139 351</td></tr><tr><td>État de New York (la ville de New York en fait partie)</td><td>137 799</td></tr></tbody></table><p class=\"small\">Ici, « État » désigne un des 50 États qui forment les États-Unis, et non un pays.</p>", "src": "Institute of International Education, Open Doors 2025 ; AACRAO, 2025.", "scene": "Sous l'arche de Washington Square, des étudiants du monde entier rejoignent les bâtiments de la New York University.", "q": "Combien d'étudiants étrangers la NYU accueille-t-elle en 2024-2025 ?", "hint": "Première phrase du texte.", "h": ["52gqag"], "k": "LCMtKnR9e3x8ZmFse3h0en97b5fmODwrPS4iPTx0jOU9PTUhKyw9J2+P6W8aFhllb2U9KWk6OiY6LD0nJjiK5nQuIYrmJiYvKCY6KmxybxcgIDwiNiYtaSuX5jwoPCcqbCg6JzwlaX1kb3x5f3pvBCg6IG8iIDkxLjlpKzFvKiY9OS44ICA6YWyrz8BvHQoCdHVsi+R0Ay1pOT0jICxvMiA+JCp0Kyk6byAuICwhIDxsLTp0IiMnKzFvKSc7PSo+ZW8lOiVpKDU9KCwhIG8pJzwhJjgsbzAqP2kjPSoiOm81OSkqbzEjICxvlvQ=", "a": "fXt8fGY=", "bv": "expliquer", "bq": "Pourquoi accueillir 27 532 étudiants étrangers renforce-t-il New York ?", "bo": ["Les étudiants étrangers remplacent les touristes", "Cela fait baisser le prix des études pour les Américains", "La ville forme des talents du monde entier, qui gardent ensuite des liens avec elle"], "bh": "1f06c4c"}, {"id": "siliconalley", "name": "Silicon Alley", "area": "Autour du Flatiron Building", "br": "fin", "lv": ["qa"], "pos": [318, 698], "title": "Classement mondial des écosystèmes de start-ups en 2025", "doc": "<table class=\"dtab\"><thead><tr><th>Rang</th><th>Écosystème</th></tr></thead><tbody><tr><td>1</td><td>Silicon Valley (États-Unis)</td></tr><tr><td>2</td><td>New York (États-Unis)</td></tr><tr><td>3</td><td>Londres (Royaume-Uni)</td></tr><tr><td>4</td><td>Tel Aviv (Israël)</td></tr><tr><td>5 (ex aequo)</td><td>Boston (États-Unis) et Pékin (Chine)</td></tr><tr><td>12</td><td>Paris (France)</td></tr></tbody></table><p>New York est devenue seule 2e en 2025 : elle partageait cette place avec Londres depuis 2020. Les start-ups new-yorkaises misent surtout sur l'intelligence artificielle, la santé et les technologies du climat.</p>", "src": "Startup Genome, Global Startup Ecosystem Report, juin 2025.", "scene": "Au pied du Flatiron, les start-ups de la tech et de la publicité ont fait de ce quartier un pôle d'affaires du numérique.", "q": "À quel rang mondial se place l'écosystème de start-ups de New York en 2025 ?", "hint": "Deuxième ligne du tableau.", "h": ["160wt05", "19mp1ja", "8nbsb4", "livti7"], "k": "LCMtKnR9Yml9MW+P4Cw7PDU6O5fnISxvOSAiLSY1I2wtKnQ8OCg9IGI5OTx0Kyk7PT2M5DsqdCMtaRw9IyUqIDpvGigjOCo1aWdmf358ZnpvHTwuJjslLD10K2soKTIuJTsqJ284JjomIY/gbyIqPjpvOGglJyE7OS09JjshYmmt1NtsGAwZb3Zpjf9vAiw4dBYjOyR0Kj89bzhoOSdvMCo/aSsxOjRpPyYqISAqJjxsOYzgIyk6bzkgIi0mNTo0aSsxbz89LiY7YTw/J2NsIzonOylpKzE9PiCM/D0paSM1bx8gIz0sIydvAi4gJSotb47y", "a": "fQ==", "bv": "résumer", "bq": "Quelle phrase résume le mieux le document ?", "bo": ["New York est l'un des deux premiers pôles mondiaux de start-ups, juste derrière la Silicon Valley", "Paris et Londres devancent New York", "New York est le premier pôle mondial de start-ups"], "bh": "ih39v9"}, {"id": "midtown", "name": "Empire State Building et Midtown", "area": "Midtown, 34e rue", "br": "fin", "lv": ["ftn", "qa"], "pos": [325, 655], "title": "Les villes qui accueillent le plus de sièges de grandes firmes", "doc": "<table class=\"dtab\"><thead><tr><th>Ville</th><th>Sièges du Fortune Global 500 (2025)</th></tr></thead><tbody><tr><td>Pékin</td><td>47</td></tr><tr><td>Tokyo</td><td>26</td></tr><tr><td>Paris</td><td>22</td></tr><tr><td>New York</td><td>20</td></tr><tr><td>Londres</td><td>16</td></tr><tr><td>Shanghai</td><td>12</td></tr><tr><td>Séoul</td><td>10</td></tr></tbody></table><p>Le Fortune Global 500 classe les 500 plus grandes entreprises du monde selon leur chiffre d'affaires. Aux États-Unis, l'agglomération de New York reste la 1re pour les sièges des 500 plus grandes firmes américaines : 49 en 2025.</p>", "src": "Fortune Global 500 2025, d'après Dallas Regional Chamber ; RealPage, 2025.", "scene": "Du sommet de l'Empire State Building, vous dominez les tours de Midtown, le premier quartier d'affaires de Manhattan.", "q": "Combien de sièges du Fortune Global 500 se trouvent à New York en 2025 ?", "hint": "Quatrième ligne du tableau.", "h": ["1x69i9"], "k": "LCMtKnR9fGdvZn9sOiaX5yssPHQrOWkJOz04PCExbwslIDYuIGl6ZH9sYXsxbzogIzgqbC06dCIjJysxZmwsO3R7dWk8PYzkLionbyg8bxIgPj06OipsfH9kby0kjP09JSouPSFiaQk9PSEsPHQiOSU7PSEtPSY7IS0lKidvKT1vJTotOzs9Kj5pK3MuKi8uPT0pOmF0rczdbwUMAWl1dI3naQsxPGwtjP0sJTomOyE/aT4hJmw9ICEsJCwhIG8gboz9LCMnIDkmKWkrIW8hJiEwKmwsISAmKTtvJyAiPW8kPSU6Kidvj+lvGio7aRY7PSdpje8=", "a": "fXw=", "bv": "interpréter", "bq": "New York est la 4e ville du monde pour les sièges des 500 plus grandes entreprises. Qu'est-ce que cela montre ?", "bo": ["New York est la ville la plus peuplée du monde", "Les grandes entreprises quittent New York", "Des décisions qui touchent l'économie du monde entier sont prises à New York"], "bh": "yphh3x"}, {"id": "onu", "name": "Siège de l'ONU", "area": "East Side, bord de l'East River", "br": "fin", "lv": ["admin"], "pos": [384, 612], "title": "Septembre 2025 : le monde se réunit à New York", "doc": "<p>La 80e session de l'Assemblée générale des Nations unies s'est ouverte le 9 septembre 2025 au siège de l'ONU, au bord de l'East River. Pendant la « semaine de haut niveau », du 22 au 30 septembre, plus de 12 000 participants sont venus à New York.</p><table class=\"dtab\"><thead><tr><th>Assemblée générale 2025</th><th></th></tr></thead><tbody><tr><td>États membres de l'ONU</td><td>193</td></tr><tr><td>États ayant pris la parole au débat général</td><td>189</td></tr><tr><td>Participants à la semaine de haut niveau</td><td>12 296</td></tr></tbody></table>", "src": "ONU Info, septembre-octobre 2025.", "scene": "Vous longez les drapeaux des États membres devant la tour de verre de l'Organisation des Nations unies.", "q": "Combien d'États membres compte l'ONU ?", "hint": "Première ligne du tableau.", "h": ["4i15vk"], "k": "LCMtKnR+dXphdH51em+XxjgoOydvISwiNj0pOm9vb31xdnQgIj1vJD0lOm84Lmw5LiYgICxvMSFsOiokOykkLSYqbHt/ZnpiaQwxITg7KnQuKCQmOiY/PT01OyUvbzkuJiw6Jm9kLiAhOSk7ITUhLyxvOSAiLSY1IylgYXStzN1vBQwBaXV0jedpAzE8bC0mJiYrLC46Oz9pKzFvPDsqJz45LG8gIDk6bzgqP2k/NTY/aTZ0OSUsIToqIj1vMCY/KjogKj5pKzE8bC49NSEoOm8kPSMrI5fnISw8dCs5aSI7ISgsb5b0", "a": "fnV6", "bv": "expliquer", "bq": "Pourquoi la « semaine de haut niveau » de l'ONU fait-elle de New York un centre de commandement politique ?", "bo": ["L'ONU y vote les lois américaines", "Le gouvernement des États-Unis y siège", "Les dirigeants de presque tous les pays y viennent discuter des grands problèmes du monde"], "bh": "1hry59n"}, {"id": "timessquare", "name": "Times Square et Broadway", "area": "42e rue et Broadway", "br": "fin", "lv": ["tour"], "pos": [298, 624], "title": "Broadway, saison record", "doc": "<table class=\"dtab\"><thead><tr><th>Saison 2024-2025</th><th></th></tr></thead><tbody><tr><td>Entrées vendues</td><td>14,66 millions (2e meilleure saison de l'histoire)</td></tr><tr><td>Recettes</td><td>1,89 milliard de dollars (record)</td></tr><tr><td>Nouveaux spectacles</td><td>43 (21 comédies musicales, 21 pièces, 1 concert)</td></tr></tbody></table><p>La saison suivante, 2025-2026, a de nouveau battu le record des recettes avec 1,91 milliard de dollars.</p>", "src": "The Broadway League, mai 2025 et mai 2026.", "scene": "Écrans géants, taxis jaunes et foule du monde entier : vous avez des places pour une comédie musicale.", "q": "Combien d'entrées Broadway a-t-il vendues en 2024-2025 (en millions) ?", "hint": "Première ligne du tableau.", "h": ["1obowkn", "1xvb49k"], "k": "LCMtKnR+eGV5YmFseHt4eXppIj0jICAgOjxsLWgxITg7jP0qP2kqIG99ZXdtbyEgIzgmLTsrdCspaSs7IyAoPSdvKCxvJiovLDsgKj9pKjpvfnl9YGJ+eX1hYWwdICE9JToiMW8pPW84ICU6JiY8Ymmt1NtsGAwZb3Zpjf9vAChvNzogPTomKmwsPCBvOScqdC4vPSYiJjiK5nSM5SogOiAhID4hKmwkLj4qOTsqeG89PCZ0Ljg9JiYqbC0qJ28/OSo3Oy09KiE9P2krIW8hJiEwKmwsISAmKTtvlvQ=", "a": "fnhleWI=", "bv": "interpréter", "bq": "Que montrent les 14,66 millions d'entrées et les 1,89 milliard de dollars de recettes de Broadway ?", "bo": ["Broadway est surtout fréquenté par des New-Yorkais", "Les théâtres de Broadway perdent leur public", "La culture est une activité économique majeure, qui attire des spectateurs du monde entier"], "bh": "s2ifuq"}, {"id": "met", "name": "Metropolitan Museum of Art", "area": "Bord de Central Park", "br": "fin", "lv": ["tour"], "pos": [336, 500], "title": "Le Met, un musée pour New York et pour le monde", "doc": "<table class=\"dtab\"><thead><tr><th>Année 2024-2025 (juillet à juin)</th><th></th></tr></thead><tbody><tr><td>Visiteurs</td><td>plus de 5,7 millions (+5 %)</td></tr><tr><td>Habitants de New York, du New Jersey et du Connecticut</td><td>62 %</td></tr><tr><td>Visiteurs des autres États américains</td><td>23 %</td></tr><tr><td>Visiteurs étrangers</td><td>15 %</td></tr><tr><td>Visites du site Internet</td><td>27 millions, dont 35 % hors des États-Unis</td></tr></tbody></table><p>En 2019, avant la pandémie, le Met avait reçu environ 7 millions de visiteurs.</p>", "src": "The Metropolitan Museum of Art, communiqué du 21 juillet 2025.", "scene": "Le long de Central Park, le Met expose des œuvres venues du monde entier, jusqu'à un temple égyptien.", "q": "Quelle part des visiteurs du Met vient de l'étranger (en %) ?", "hint": "Quatrième ligne du tableau.", "h": ["vwh54t"], "k": "LCMtKnR+eWdvZXpsbG8wKmw/JicmOCw6JjxsiuYgPS0nKDE9P2k8IT1sOSMhPGwtKnR6YH5vOSYgJSY7IT9pdHR8eWlqdCspOm8iJj8gOzE8bC06dDwlPSp0BiI9KiYhKT1vIiYpJyExIThpKzFvIG6M/Ts+KCEzKj5nbwAgOTsmJyIpaSwhIzg8PTEjYmmt1NtsGAwZb3Zpjf9vACxvJi41JiE6KiEsISBvISYhMCYtJW8wOmwEKiBvPCg8JypsKyo1Oi8mOiRvPCg9dAYiPSomISk9b5b0", "a": "fnk=", "bv": "comparer", "bq": "Seuls 15 % des visiteurs du Met viennent de l'étranger, mais 35 % des visites de son site Internet en viennent. Qu'en conclure ?", "bo": ["Les étrangers ne s'intéressent pas au Met", "Le site Internet attire surtout des New-Yorkais", "Le rayonnement mondial du Met passe beaucoup par Internet"], "bh": "bw2m43"}];
 
 /* ---------- État ---------- */
 const KEY="opsiege-ny-b2";
@@ -679,7 +760,7 @@ function buildMap(){
   s+=`<path d="M${nx} ${ny-20} L${nx+8} ${ny+4} L${nx} ${ny-2} L${nx-8} ${ny+4}Z" fill="var(--ink)"/><text x="${nx}" y="${ny+20}" text-anchor="middle" style="font-family:var(--display);font-size:13px;fill:#16223B">N</text>`;
   const j=rot(PL[0].pos);
   s+=`<text x="${j[0].toFixed(1)}" y="${(j[1]+30).toFixed(1)}" text-anchor="middle" style="font-family:var(--body);font-size:10.5px;fill:#16223B">✈ JFK (à 20 km)</text>`;
-  const pn=rot(PL[1].pos);s+=`<text x="${(pn[0]+18).toFixed(1)}" y="${(pn[1]+4).toFixed(1)}" style="font-family:var(--body);font-size:10.5px;fill:#16223B">⚓ Newark (à 12 km)</text>`;
+  const pn=rot(PL[1].pos);s+=`<text x="${(pn[0]+18).toFixed(1)}" y="${(pn[1]+4).toFixed(1)}" style="font-family:var(--body);font-size:10.5px;fill:#16223B">⚓ Port de Newark (à 12 km)</text>`;
   PL.forEach((p,i)=>{const r=rot(p.pos),X=r[0].toFixed(1),Y=r[1].toFixed(1);s+=`<g class="pin" data-id="${p.id}" tabindex="0" role="link" aria-label="${i+1}. ${esc(p.name)}"><circle class="body" cx="${X}" cy="${Y}" r="20"/><g class="ico" transform="translate(${(r[0]-13).toFixed(1)} ${(r[1]-13).toFixed(1)}) scale(1.0833)">${ICON[p.id]}</g><circle class="badge" cx="${(r[0]+16).toFixed(1)}" cy="${(r[1]-16).toFixed(1)}" r="9.5"/><text x="${(r[0]+16).toFixed(1)}" y="${(r[1]-15.5).toFixed(1)}">${i+1}</text><title>${i+1}. ${esc(p.name)}</title></g>`;});
   svg.innerHTML=s;
   svg.querySelectorAll(".pin").forEach(g=>{
@@ -923,10 +1004,9 @@ function renderLieu(id){
         <div class="lab">Pour le rapport · complétez la phrase</div>
         <p class="sentence">${AT[p.id]}, le document montre que <input id="nt" autocomplete="off" aria-label="Ce que montre le document" placeholder="un chiffre + ce qu'il mesure" value="${esc(st.notes[p.id]||"")}"></p>
         <p class="sentence">Cela prouve que New York possède <b id="ntbr">${fOK?proofEnd(p):"… (répondez d'abord à la question 3)"}</b>.</p>
-        <p class="small" style="color:#C9CEDA">Exemple : « Au port de Newark, le document montre que 8,7 millions de conteneurs (EVP) y sont passés en 2024. Cela prouve que New York possède un grand port. »</p>
+        <p class="small" style="color:#C9CEDA">Exemple, sur une autre ville : « À la tour Eiffel, le document montre que plus de 6 millions de personnes l'ont visitée en 2024. Cela prouve que Paris possède un grand centre de tourisme. »</p>
       </div>
       <div class="won ${done(p.id)?"show":""}" id="won">Case${p.lv.length>1?"s":""} du schéma coloriée${p.lv.length>1?"s":""} : ${p.lv.map(l=>LF[l]).join(" + ")}. <a href="#plan">Choisir un autre lieu →</a></div>
-      <p class="key">${prof?"<b>Corrigé :</b> "+esc(dec(p.k)):""}</p>
     </div>
   </div>`;
   const chips=el.querySelectorAll(".stepchip");
@@ -1106,6 +1186,7 @@ const PRE2={
 const BRT={pop:"Une population importante et diverse",trans:"Un réseau de transports exceptionnel",fin:"Un grand centre financier et tertiaire"};
 const L2LAB={taille:"Taille de population importante",multi:"Multiculturelle",forma:"Haut niveau de formation",aero:"Aéroports",port:"Port",reseau:"Centre de réseau mondial",admin:"Centre administratif majeur",eco:"Centre économique majeur (firmes multinationales, bourse, quartiers d'affaires)",tour:"Centre de tourisme"};
 function renderRapport(){
+  {const sg=document.getElementById("sig");if(!sg.value.trim()&&st.player){sg.value=st.player;st.memo.sig=st.player;save();}}
   document.getElementById("trapR").textContent=TRAP;
   st.memo.args=st.memo.args||{};
   const L=lit(),brMiss=BRK.filter(k=>!BR[k].leaves.some(l=>L[l].length)).map(k=>BR[k].name);
@@ -1147,29 +1228,145 @@ MF.forEach(id=>{const t=document.getElementById(id);t.value=st.memo[id]||"";t.ad
 document.querySelectorAll('input[name="site"]').forEach(r=>{if(r.value===st.memo.site)r.checked=true;r.addEventListener("change",()=>{st.memo.site=r.value;save();renderMemo();});});
 document.getElementById("copy").onclick=async()=>{const fb=document.getElementById("copyfb");try{await navigator.clipboard.writeText(document.getElementById("memo").textContent);fb.textContent="Note copiée.";}catch(e){fb.textContent="Copie impossible ici : sélectionnez le texte à la main.";}};
 
-/* ---------- Professeur ---------- */
-const dlg=document.getElementById("dlg");
-document.getElementById("profBtn").onclick=()=>{
-  if(prof){prof=false;PK="";document.body.classList.remove("prof");route();document.getElementById("profBtn").textContent="Espace professeur";return;}
-  dlg.classList.add("show");document.getElementById("pcode").value="";document.getElementById("pfb").textContent="";document.getElementById("pcode").focus();
-};
-document.getElementById("dlgClose").onclick=()=>dlg.classList.remove("show");
-document.getElementById("dlgForm").onsubmit=e=>{
-  e.preventDefault();
-  const pc=document.getElementById("pcode").value.trim().toUpperCase();
-  if(fnv("prof|"+pc)===HPROF){PK=pc;prof=true;document.body.classList.add("prof");dlg.classList.remove("show");document.getElementById("profBtn").textContent="Quitter l'espace professeur";buildCodes();route();}
-  else document.getElementById("pfb").textContent="Code incorrect.";
-};
-function buildCodes(){const t=document.getElementById("codesTable");t.querySelectorAll("tr.c").forEach(r=>r.remove());t.insertAdjacentHTML("beforeend",PL.map((p,i)=>`<tr class="c"><td>${i+1}. ${esc(p.name)}</td><td class="t">${esc(dec(p.a))}</td><td>${BR[p.br].name} → ${p.lv.map(l=>LF[l]).join(", ")}</td></tr>`).join(""));}
+/* ---------- Ouverture : identité, bureau, vol ---------- */
+const RMO=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function renderAccueil(){const i=document.getElementById("pname");i.value=st.player||"";}
+document.getElementById("pname").addEventListener("input",e=>{st.player=e.target.value.trim();save();});
+
+const Story=(()=>{
+  const box=document.getElementById("bubbles"),end=document.getElementById("talkEnd"),skip=document.getElementById("talkSkip");
+  let timers=[],playing=false;
+  const lines=()=>{const n=st.player;return [
+    [`Entrez${n?", "+n:""}, asseyez-vous. Je vous ai fait venir pour une mission délicate.`],
+    ["Notre siège social est ici, à Dubaï. Mais la guerre entre les États-Unis et l'Iran rend la région du Golfe trop dangereuse : je dois déménager le siège."],
+    ["J'hésite entre deux villes : Pékin et New York. À New York, le prix des bureaux a baissé, c'est tentant… mais ce choix engage l'avenir de nos 68 000 salariés."],
+    ["Un siège social doit se trouver dans une ville mondiale : un centre de commandement, d'où l'on peut diriger des activités dans le monde entier."],
+    ["Je dois être certaine que New York est une ville mondiale.",1],
+    ["Votre mission : allez à New York et enquêtez dans différents lieux. Rapportez-moi des preuves chiffrées.",1],
+    ["Le jet privé de la société vous attend. J'aurai besoin de votre rapport rapidement !",1]];};
+  const clear=()=>{timers.forEach(clearTimeout);timers=[];};
+  const later=(f,ms)=>timers.push(setTimeout(f,ms));
+  function finish(){clear();playing=false;box.innerHTML=lines().map(([t,s])=>`<p class="bubble ${s?"strong":""}">${esc(t)}</p>`).join("");end.classList.add("show");skip.parentNode.classList.add("hide");st.storyDone=1;save();}
+  function play(){
+    clear();
+    if(RMO||st.storyDone){finish();return;}
+    playing=true;box.innerHTML="";end.classList.remove("show");skip.parentNode.classList.remove("hide");
+    const L=lines();let i=0;
+    const next=()=>{
+      if(i>=L.length){finish();return;}
+      const [t,strong]=L[i++],b=document.createElement("p");b.className="bubble"+(strong?" strong":"");
+      const txt=document.createElement("span"),cur=document.createElement("span");cur.className="cur";cur.innerHTML="&nbsp;";b.append(txt,cur);box.append(b);
+      let c=0;const done=()=>{txt.textContent=t;cur.remove();b.onclick=null;later(next,strong?1100:800);};
+      b.onclick=()=>{clear();done();};
+      const type=()=>{c+=2;txt.textContent=t.slice(0,c);if(c>=t.length)done();else later(type,24);};
+      later(type,250);
+    };
+    next();
+  }
+  skip.onclick=finish;
+  return {play,stop:()=>{if(playing){clear();playing=false;}}};
+})();
+
+const Vol=(()=>{
+  const W=960,H=540,svgEl=document.getElementById("volmap"),txt=document.getElementById("volTxt"),clock=document.getElementById("volClock"),info=document.getElementById("volInfo");
+  const DXB=[55.27,25.2],NYC=[-74.006,40.713],TEB=[-74.061,40.85],WAS=[-77.037,38.907];
+  let ok=!!(window.d3&&window.topojson&&window.GEO_WORLD&&window.GEO_US),built=false,raf=0,P,path,g,stG,route,lab,plane,labels=[],view=[W/2,H/2,W],V1,V2,interp;
+  function build(){
+    built=true;const svg=d3.select(svgEl);
+    const world=topojson.feature(GEO_WORLD,GEO_WORLD.objects.countries),states=topojson.feature(GEO_US,GEO_US.objects.states);
+    P=d3.geoNaturalEarth1().rotate([30,0]).fitExtent([[10,10],[W-10,H-10]],{type:"MultiPoint",coordinates:[[-128,10],[70,10],[-128,66],[70,66],[-30,74]]});
+    path=d3.geoPath(P);interp=d3.geoInterpolate(DXB,NYC);
+    svg.append("rect").attr("width",W).attr("height",H).attr("fill","#A9CCDB");
+    g=svg.append("g");
+    g.append("g").selectAll("path").data(world.features).join("path").attr("class",d=>"land"+(d.id==="840"?" usa":"")).attr("d",path);
+    const lower=states.features.filter(f=>!["02","15","72","60","66","69","78"].includes(f.id));
+    stG=g.append("g").style("opacity",0);stG.selectAll("path").data(lower).join("path").attr("class",d=>"state"+(d.id==="36"?" ny":"")).attr("d",path);
+    route=g.append("path").attr("class","route");
+    lab=svg.append("g");
+    const L=(ll,t,cls,ph)=>labels.push({ll,ph,el:lab.append("text").attr("class","lbl "+(cls||"")).text(t).style("opacity",0)});
+    L([-100,48],"AMÉRIQUE DU NORD","",["w"]);L([18,50],"EUROPE","",["w"]);L([20,12],"AFRIQUE","",["w"]);L([62,45],"ASIE","",["w"]);
+    L([-40,30],"Océan Atlantique","sea",["w"]);L([-98,39],"ÉTATS-UNIS","big",["u"]);L([-105,56],"CANADA","",["u"]);L([-103,24],"MEXIQUE","",["u"]);
+    L([-62,33],"Océan Atlantique","sea",["u","n"]);L([-124,33],"Océan Pacifique","sea",["u"]);
+    L([-75.6,43.1],"ÉTAT DE NEW YORK","big",["n"]);L([-76.5,45.1],"CANADA","",["n"]);L([-78.6,40.6],"Pennsylvanie","",["n"]);
+    const C=(ll,t,ph,anchor,dx,col)=>{const c=lab.append("g").attr("class","city").style("opacity",0);c.append("circle").attr("r",5).attr("fill",col||"#C8283C").attr("stroke","#fff").attr("stroke-width",2);c.append("text").attr("x",dx||9).attr("y",4).attr("text-anchor",anchor||"start").text(t);labels.push({ll,ph,el:c,city:1});};
+    C(DXB,"Dubaï (Émirats arabes unis)",["w"],"end",-9);C(NYC,"New York",["u","n","end"],"start",10);
+    C(WAS,"Washington (capitale)",["n"],"end",-9,"#16223B");C(TEB,"Teterboro (aéroport privé)",["n"],"end",-9,"#16223B");
+    plane=lab.append("path").attr("d","M14 0 L4 -3 L-2 -12 L-5 -12 L-1 -3 L-9 -2 L-12 -6 L-14 -6 L-12 0 L-14 6 L-12 6 L-9 2 L-1 3 L-5 12 L-2 12 L4 3 Z").attr("fill","#16223B").attr("stroke","#fff").attr("stroke-width",1.2);
+    const vb=b=>{const w=Math.max(b[1][0]-b[0][0],(b[1][1]-b[0][1])*W/H)*1.12;return [(b[0][0]+b[1][0])/2,(b[0][1]+b[1][1])/2,w];};
+    V1=vb(path.bounds({type:"FeatureCollection",features:lower}));
+    V2=vb(path.bounds({type:"MultiPoint",coordinates:[[-80.2,38.4],[-71.2,45.2]]}));
+  }
+  const xf=v=>{const k=W/v[2];return [k,W/2-v[0]*k,H/2-v[1]*k];};
+  function place(phase){
+    const [k,tx,ty]=xf(view);g.attr("transform",`translate(${tx},${ty}) scale(${k})`);
+    labels.forEach(l=>{const p=P(l.ll);l.el.attr("transform",`translate(${p[0]*k+tx},${p[1]*k+ty})`).style("opacity",l.ph.includes(phase)||(phase==="n"&&l.ph.includes("end"))?1:0);});
+  }
+  const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+  function setHours(h){const hh=Math.floor(h),mm=Math.round((h-hh)*60);clock.textContent=`${hh} h ${String(mm).padStart(2,"0")} de vol`;}
+  function finalState(){view=V2;route.attr("d",path({type:"LineString",coordinates:[DXB,NYC]}));stG.style("opacity",1);plane.style("opacity",0);place("n");setHours(14);txt.textContent="Atterrissage à Teterboro, l'aéroport privé tout proche de New York. Bienvenue !";info.classList.add("show");}
+  function play(){
+    if(!st.t0){st.t0=Date.now();save();Chrono.tick();}
+    if(!ok){txt.textContent="Vol Dubaï → New York : environ 11 000 km et 14 heures de vol.";info.classList.add("show");return;}
+    if(!built)build();
+    cancelAnimationFrame(raf);info.classList.remove("show");
+    if(RMO){finalState();return;}
+    view=[W/2,H/2,W];stG.style("opacity",0);plane.style("opacity",1);place("w");
+    const t0=performance.now(),F=6500,Z1=2600,H1=1900,Z2=2400;
+    const zi1=d3.interpolateZoom([W/2,H/2,W],V1),zi2=d3.interpolateZoom(V1,V2);
+    const step=now=>{
+      const t=now-t0;
+      if(t<F){const u=ease(t/F),pt=interp(u),p2=interp(Math.min(1,u+.01));
+        route.attr("d",path({type:"LineString",coordinates:[DXB,pt]}));
+        const a=P(pt),b=P(p2),[k,tx,ty]=xf(view);plane.attr("transform",`translate(${a[0]*k+tx},${a[1]*k+ty}) rotate(${Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI})`);
+        setHours(14*u);
+        txt.textContent=u<.15?"Décollage de Dubaï, aux Émirats arabes unis.":u<.45?"Survol du Moyen-Orient et de l'Europe.":u<.85?"Traversée de l'océan Atlantique Nord.":"Approche de l'Amérique du Nord.";
+        place("w");
+      }else if(t<F+Z1){const u=ease((t-F)/Z1);view=zi1(u);plane.style("opacity",0);stG.style("opacity",u);place(u>.5?"u":"w");setHours(14);txt.textContent="Arrivée aux États-Unis. Repérez l'État de New York, en jaune, au nord-est.";}
+      else if(t<F+Z1+H1){view=V1;place("u");}
+      else if(t<F+Z1+H1+Z2){const u=ease((t-F-Z1-H1)/Z2);view=zi2(u);place(u>.5?"n":"u");txt.textContent="Descente vers New York, sur la côte de l'océan Atlantique.";}
+      else{finalState();return;}
+      raf=requestAnimationFrame(step);
+    };
+    raf=requestAnimationFrame(step);
+  }
+  document.getElementById("volReplay").onclick=play;
+  return {play,stop:()=>cancelAnimationFrame(raf)};
+})();
+
+const Driver=(()=>{
+  const el=document.getElementById("drvSay");let tm=0;
+  function say(){
+    clearTimeout(tm);const n=PL.filter(p=>done(p.id)).length;
+    const t=n===0?"Bonjour ! Où allons-nous ?":n>=PL.length?"Vous avez tout visité ! On rentre rédiger le rapport ?":"Où allons-nous maintenant ?";
+    if(RMO){el.textContent=t;return;}
+    let c=0;el.textContent="";const type=()=>{c++;el.textContent=t.slice(0,c);if(c<t.length)tm=setTimeout(type,45);};tm=setTimeout(type,300);
+  }
+  return {say};
+})();
+
+const Chrono=(()=>{
+  const el=document.getElementById("chrono"),DUR=45*60*1000;
+  function tick(){
+    if(!st.t0){el.hidden=true;return;}
+    el.hidden=false;const r=DUR-(Date.now()-st.t0);
+    if(r>0){const m=Math.floor(r/60000),sec=Math.floor(r/1000)%60;el.classList.remove("late");el.innerHTML=`⏱ Rapport attendu dans <b>${String(m).padStart(2,"0")}:${String(sec).padStart(2,"0")}</b>`;}
+    else{el.classList.add("late");el.innerHTML="⏱ <b>Temps écoulé : Mme Oliot attend votre rapport !</b>";}
+  }
+  setInterval(tick,1000);tick();
+  return {tick};
+})();
 
 /* ---------- Routeur ---------- */
-const VIEWS=["accueil","plan","jeu-taxi","rapport"];
+const VIEWS=["accueil","bureau","vol","plan","jeu-taxi","rapport"];
 function route(){
   let h=location.hash.slice(1)||"accueil",v=h.startsWith("lieu-")?"lieu":(VIEWS.includes(h)?h:"accueil");
   document.querySelectorAll(".view").forEach(s=>s.classList.toggle("on",s.id==="v-"+v));
-  document.querySelectorAll(".tabs a").forEach(a=>a.toggleAttribute("aria-current",a.dataset.v===v||(v==="lieu"&&a.dataset.v==="plan")));
+  document.querySelectorAll(".tabs a").forEach(a=>a.toggleAttribute("aria-current",a.dataset.v===v||(v==="lieu"&&a.dataset.v==="plan")||((v==="bureau"||v==="vol")&&a.dataset.v==="accueil")));
   document.querySelectorAll(".tabs a[aria-current]").forEach(a=>a.setAttribute("aria-current","page"));
-  if(v==="plan")renderPlan();
+  if(v==="accueil")renderAccueil();
+  if(v==="bureau")Story.play();else Story.stop();
+  if(v==="vol")Vol.play();else Vol.stop();
+  if(v==="plan"){renderPlan();Driver.say();}
   if(v==="lieu")renderLieu(h.slice(5));
   if(v==="rapport")renderRapport();
   if(v!=="jeu-taxi")taxiStop();
