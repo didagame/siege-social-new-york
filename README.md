@@ -7,7 +7,7 @@ Une PDG fictive, Jeanne Oliot, veut transférer le siège de son groupe de Duba�
 ## Déroulé
 
 1. **Identité** : l'élève découvre son personnage, diplômé·e de l'Université de Rennes, et tape son prénom.
-2. **Bureau de la présidente** : Mme Oliot, qui hésite entre Pékin et New York, lui confie la mission dans des bulles qui s'écrivent au fur et à mesure.
+2. **Bureau de la présidente** : Mme Oliot, qui doit déménager le siège en urgence et hésite entre New York et Londres (une collègue enquête à Londres), lui confie la mission dans des bulles qui s'écrivent au fur et à mesure.
 3. **Vol Dubaï → New York** : une carte animée montre le trajet, puis zoome sur les États-Unis et sur New York pour la localiser. Le chronomètre démarre au décollage (45 minutes pour rendre le rapport).
 4. **Plan** : une vue **3D** de New York (ou un plan 2D) avec 11 lieux à visiter dans l'ordre de son choix. On y voit les cinq arrondissements (Manhattan, Bronx, Queens, Brooklyn, Staten Island), les grands ponts et les tunnels vers le New Jersey.
 5. **Lieux** : pour chacun, un document chiffré à lire, une question de compréhension, puis le classement du lieu dans le schéma « ville mondiale » (population, transports, centre financier et tertiaire).
