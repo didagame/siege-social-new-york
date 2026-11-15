@@ -659,7 +659,7 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 <!-- RAPPORT -->
 <section class="view" id="v-rapport">
   <div class="gamehead"><div><div class="eyebrow">Mission finale</div><h2>Le rapport à Jeanne Oliot</h2>
-    <p class="muted" style="margin-top:6px;max-width:78ch">Votre but : confirmer à la PDG que New York est le bon choix pour le siège social, parce que c'est une <b>ville mondiale</b>. Votre note suit le plan du schéma : trois parties (les branches), découpées en sous-parties. Elle se rédige toute seule à droite.</p></div></div>
+    <p class="muted" style="margin-top:6px;max-width:78ch">Votre but : dire à la PDG si New York réunit <b>toutes les caractéristiques d'une ville mondiale</b>. Elle comparera votre rapport avec celui de votre collègue envoyée à Londres. Votre note suit le plan du schéma : trois parties (les branches), découpées en sous-parties. Elle se rédige toute seule à droite.</p></div></div>
   <span class="trap" aria-hidden="true" id="trapR"></span>
   <div class="raplay">
     <div class="rapsteps">
@@ -1245,11 +1245,11 @@ function renderMemo(){
   const lim=(m.lim||"").trim().replace(/[.\s]+$/,"")||"…";
   document.getElementById("memo").textContent=
 `À : Jeanne OLIOT, PDG du groupe Nexora
-Objet : transfert du siège social à New York
+Objet : New York, candidate pour notre siège social · rapport d'enquête
 
 Madame la Présidente,
 
-Après notre repérage, nous confirmons que New York est le bon choix pour notre siège social. New York est une ville mondiale, donc un centre de commandement :
+Vous m'avez demandé si New York réunit toutes les caractéristiques d'une ville mondiale, c'est-à-dire d'un centre de commandement. Voici notre bilan, à comparer avec le rapport sur Londres :
 
 ${parts}
 
@@ -1272,12 +1272,13 @@ const Story=(()=>{
   let timers=[],playing=false;
   const lines=()=>{const n=st.player;return [
     [`Entrez${n?", "+n:""}, asseyez-vous. Je vous ai fait venir pour une mission délicate.`],
-    ["Notre siège social est ici, à Dubaï. Mais la guerre entre les États-Unis et l'Iran rend la région du Golfe trop dangereuse : je dois déménager le siège."],
-    ["J'hésite entre deux villes : Pékin et New York. À New York, le prix des bureaux a baissé, c'est tentant… mais ce choix engage l'avenir de nos 68 000 salariés."],
+    ["Notre siège social est ici, à Dubaï. Mais la guerre entre les États-Unis et l'Iran rend la région du Golfe trop dangereuse. Nous devons déménager le siège en urgence : je dois décider dans les prochains jours.",1],
+    ["J'hésite entre deux villes : New York et Londres. À New York, le prix des bureaux a baissé, c'est tentant… mais ce choix engage l'avenir de nos 68 000 salariés."],
     ["Un siège social doit se trouver dans une ville mondiale : un centre de commandement, d'où l'on peut diriger des activités dans le monde entier."],
-    ["Je dois être certaine que New York est une ville mondiale.",1],
-    ["Votre mission : allez à New York et enquêtez dans différents lieux. Rapportez-moi des preuves chiffrées.",1],
-    ["Le jet privé de la société vous attend. J'aurai besoin de votre rapport rapidement !",1]];};
+    ["Je veux vérifier que New York est bien une ville mondiale, avec toutes les caractéristiques attendues.",1],
+    ["Votre mission : allez à New York et enquêtez dans différents lieux. Rapportez-moi des preuves chiffrées, et signalez-moi ce qui manque.",1],
+    ["Au même moment, j'envoie une de vos collègues faire exactement le même travail à Londres. Je comparerai vos deux rapports avant de choisir.",1],
+    ["Le jet privé de la société vous attend. Il n'y a pas une minute à perdre : j'ai besoin de votre rapport au plus vite !",1]];};
   const clear=()=>{timers.forEach(clearTimeout);timers=[];};
   const later=(f,ms)=>timers.push(setTimeout(f,ms));
   function finish(){clear();playing=false;box.innerHTML=lines().map(([t,s])=>`<p class="bubble ${s?"strong":""}">${esc(t)}</p>`).join("");end.classList.add("show");skip.parentNode.classList.add("hide");st.storyDone=1;save();}
