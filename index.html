@@ -351,6 +351,10 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 
 /* Ouverture : identité, bureau, vol */
 .idpage{max-width:820px;margin:0 auto}
+.dubai{margin:0 0 16px;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.dubai svg{display:block;width:100%;height:auto}
+.dubai figcaption{padding:8px 14px;font-size:.86rem;color:var(--muted)}
+.dubai figcaption b{color:var(--ink)}
 .lead{font-size:1.1rem;color:var(--muted);margin:-8px 0 16px}
 .pcard{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 14px 30px -18px #16223B88;position:relative}
 .pcard .strip{background:var(--ink);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em}
@@ -369,9 +373,10 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 @media (max-width:900px){.office{grid-template-columns:1fr}.office .idcard svg{max-height:260px}}
 .talk{display:grid;gap:10px}
 #bubbles{display:grid;gap:10px}
-.bubble{position:relative;background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:12px 16px;font-size:1.05rem;line-height:1.5;max-width:62ch;box-shadow:4px 4px 0 var(--cab)}
-.bubble::before{content:"";position:absolute;left:-12px;top:18px;border:10px solid transparent;border-right-color:var(--ink);border-left:0}
-.bubble.strong{background:#FFF6D6}
+.bubble{position:relative;background:#EAF1F6;border:2px solid #1E2C4A;border-radius:14px;padding:12px 16px;font-size:1.05rem;line-height:1.5;max-width:62ch;color:var(--ink);margin:0}
+.bubble::before{content:"";position:absolute;left:-12px;top:18px;border:10px solid transparent;border-right-color:#1E2C4A;border-left:0}
+.bubble::after{content:"";position:absolute;left:-8px;top:20px;border:8px solid transparent;border-right-color:#EAF1F6;border-left:0}
+.bubble.strong{font-weight:700}
 .bubble .cur{display:inline-block;width:.5ch;background:var(--ink);animation:blink 1s steps(1) infinite;margin-left:1px}
 @keyframes blink{50%{opacity:0}}
 @media (prefers-reduced-motion:no-preference){.bubble{animation:pop .35s ease-out}@keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}}
@@ -427,6 +432,35 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
     <div class="eyebrow">Géographie · Terminale · New York, ville mondiale</div>
     <h1 class="title">Opération Siège</h1>
     <p class="lead">Avant de commencer, voici qui vous êtes.</p>
+    <figure class="dubai">
+      <svg viewBox="0 0 820 230" role="img" aria-label="Illustration de Dubaï au coucher du soleil : la tour Burj Khalifa domine les gratte-ciel, l'hôtel en forme de voile se dresse dans la mer, des palmiers et le désert au loin">
+        <defs>
+          <linearGradient id="dsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6B26B"/><stop offset=".55" stop-color="#F9D79A"/><stop offset="1" stop-color="#FCEBC8"/></linearGradient>
+          <linearGradient id="dsea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5FA3B8"/><stop offset="1" stop-color="#2E6F86"/></linearGradient>
+        </defs>
+        <rect width="820" height="230" fill="url(#dsky)"/>
+        <circle cx="560" cy="120" r="46" fill="#FFF1C9" opacity=".9"/>
+        <path d="M0 175 Q60 150 130 168 Q190 182 250 165 L250 190 L0 190Z" fill="#E7C08A"/>
+        <g fill="#3B4A63" opacity=".55">
+          <rect x="250" y="120" width="22" height="70"/><rect x="276" y="98" width="18" height="92"/><rect x="298" y="132" width="26" height="58"/>
+          <rect x="452" y="110" width="20" height="80"/><rect x="476" y="128" width="28" height="62"/><rect x="508" y="92" width="16" height="98"/><rect x="528" y="138" width="30" height="52"/>
+        </g>
+        <g fill="#1E2C4A">
+          <rect x="318" y="104" width="20" height="86"/><rect x="342" y="126" width="16" height="64"/><path d="M430 190 L430 96 L440 84 L450 96 L450 190Z"/><rect x="456" y="140" width="22" height="50"/>
+          <path d="M380 190 L380 150 L386 150 L386 112 L392 112 L392 78 L396 78 L396 46 L399 46 L401 8 L403 46 L406 46 L406 78 L410 78 L410 112 L416 112 L416 150 L422 150 L422 190Z"/>
+        </g>
+        <rect x="0" y="188" width="820" height="42" fill="url(#dsea)"/>
+        <g fill="#1E2C4A"><path d="M664 196 L664 74 Q722 118 734 196Z"/><rect x="662" y="58" width="3" height="140"/><rect x="650" y="194" width="96" height="6"/></g>
+        <path d="M664 196 L664 84 Q712 122 722 196Z" fill="#F4F2EC" opacity=".85"/>
+        <g stroke="#1E2C4A" stroke-width="4" fill="none" stroke-linecap="round"><path d="M110 190 Q114 160 106 140"/><path d="M200 190 Q196 156 204 132"/><path d="M770 190 Q774 162 766 144"/></g>
+        <g fill="#2F5A3A"><path d="M106 140 q-24 -4 -34 10 q18 -10 34 -10z M106 140 q20 -14 36 -6 q-18 -2 -36 6z M106 140 q-8 -20 -26 -22 q18 6 26 22z M106 140 q12 -22 30 -22 q-18 8 -30 22z"/>
+        <path d="M204 132 q-24 -4 -34 10 q18 -10 34 -10z M204 132 q20 -14 36 -6 q-18 -2 -36 6z M204 132 q-8 -20 -26 -22 q18 6 26 22z M204 132 q12 -22 30 -22 q-18 8 -30 22z"/>
+        <path d="M766 144 q-24 -4 -34 10 q18 -10 34 -10z M766 144 q20 -14 36 -6 q-18 -2 -36 6z M766 144 q-8 -20 -26 -22 q18 6 26 22z M766 144 q12 -22 30 -22 q-18 8 -30 22z"/></g>
+        <path d="M560 210 L600 210 L594 218 L566 218Z" fill="#7A4E2D"/><path d="M579 210 L579 190 L592 208Z" fill="#F4F2EC"/>
+        <g stroke="#ffffff66" stroke-width="2"><path d="M40 204 h40 M300 214 h60 M480 206 h30 M620 220 h50"/></g>
+      </svg>
+      <figcaption><b>Dubaï, Émirats arabes unis</b> · Votre lieu de travail : le siège actuel du groupe Nexora. <i>Illustration.</i></figcaption>
+    </figure>
     <div class="pcard">
       <div class="strip"><span>GROUPE NEXORA · SIÈGE DE DUBAÏ</span><b>BADGE N° NX-0417</b></div>
       <div class="pgrid">
@@ -625,7 +659,7 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 <!-- RAPPORT -->
 <section class="view" id="v-rapport">
   <div class="gamehead"><div><div class="eyebrow">Mission finale</div><h2>Le rapport à Jeanne Oliot</h2>
-    <p class="muted" style="margin-top:6px;max-width:78ch">Votre but : dire à la PDG si New York réunit <b>toutes les caractéristiques d'une ville mondiale</b>. Elle comparera votre rapport avec celui de votre collègue envoyée à Londres. Votre note suit le plan du schéma : trois parties (les branches), découpées en sous-parties. Elle se rédige toute seule à droite.</p></div></div>
+    <p class="muted" style="margin-top:6px;max-width:78ch">Votre but : confirmer à la PDG que New York est le bon choix pour le siège social, parce que c'est une <b>ville mondiale</b>. Votre note suit le plan du schéma : trois parties (les branches), découpées en sous-parties. Elle se rédige toute seule à droite.</p></div></div>
   <span class="trap" aria-hidden="true" id="trapR"></span>
   <div class="raplay">
     <div class="rapsteps">
@@ -1211,11 +1245,11 @@ function renderMemo(){
   const lim=(m.lim||"").trim().replace(/[.\s]+$/,"")||"…";
   document.getElementById("memo").textContent=
 `À : Jeanne OLIOT, PDG du groupe Nexora
-Objet : New York, candidate pour notre siège social · rapport d'enquête
+Objet : transfert du siège social à New York
 
 Madame la Présidente,
 
-Vous m'avez demandé si New York réunit toutes les caractéristiques d'une ville mondiale, c'est-à-dire d'un centre de commandement. Voici notre bilan, à comparer avec le rapport sur Londres :
+Après notre repérage, nous confirmons que New York est le bon choix pour notre siège social. New York est une ville mondiale, donc un centre de commandement :
 
 ${parts}
 
@@ -1238,29 +1272,27 @@ const Story=(()=>{
   let timers=[],playing=false;
   const lines=()=>{const n=st.player;return [
     [`Entrez${n?", "+n:""}, asseyez-vous. Je vous ai fait venir pour une mission délicate.`],
-    ["Notre siège social est ici, à Dubaï. Mais la guerre entre les États-Unis et l'Iran rend la région du Golfe trop dangereuse. Nous devons déménager le siège en urgence : je dois décider dans les prochains jours.",1],
-    ["J'hésite entre deux villes : New York et Londres. À New York, le prix des bureaux a baissé, c'est tentant… mais ce choix engage l'avenir de nos 68 000 salariés."],
+    ["Notre siège social est ici, à Dubaï. Mais la guerre entre les États-Unis et l'Iran rend la région du Golfe trop dangereuse : je dois déménager le siège."],
+    ["J'hésite entre deux villes : Pékin et New York. À New York, le prix des bureaux a baissé, c'est tentant… mais ce choix engage l'avenir de nos 68 000 salariés."],
     ["Un siège social doit se trouver dans une ville mondiale : un centre de commandement, d'où l'on peut diriger des activités dans le monde entier."],
-    ["Je veux vérifier que New York est bien une ville mondiale, avec toutes les caractéristiques attendues.",1],
-    ["Votre mission : allez à New York et enquêtez dans différents lieux. Rapportez-moi des preuves chiffrées, et signalez-moi ce qui manque.",1],
-    ["Au même moment, j'envoie une de vos collègues faire exactement le même travail à Londres. Je comparerai vos deux rapports avant de choisir.",1],
-    ["Le jet privé de la société vous attend. Il n'y a pas une minute à perdre : j'ai besoin de votre rapport au plus vite !",1]];};
+    ["Je dois être certaine que New York est une ville mondiale.",1],
+    ["Votre mission : allez à New York et enquêtez dans différents lieux. Rapportez-moi des preuves chiffrées.",1],
+    ["Le jet privé de la société vous attend. J'aurai besoin de votre rapport rapidement !",1]];};
   const clear=()=>{timers.forEach(clearTimeout);timers=[];};
   const later=(f,ms)=>timers.push(setTimeout(f,ms));
   function finish(){clear();playing=false;box.innerHTML=lines().map(([t,s])=>`<p class="bubble ${s?"strong":""}">${esc(t)}</p>`).join("");end.classList.add("show");skip.parentNode.classList.add("hide");st.storyDone=1;save();}
   function play(){
     clear();
-    if(RMO||st.storyDone){finish();return;}
     playing=true;box.innerHTML="";end.classList.remove("show");skip.parentNode.classList.remove("hide");
     const L=lines();let i=0;
     const next=()=>{
       if(i>=L.length){finish();return;}
       const [t,strong]=L[i++],b=document.createElement("p");b.className="bubble"+(strong?" strong":"");
       const txt=document.createElement("span"),cur=document.createElement("span");cur.className="cur";cur.innerHTML="&nbsp;";b.append(txt,cur);box.append(b);
-      let c=0;const done=()=>{txt.textContent=t;cur.remove();b.onclick=null;later(next,strong?1100:800);};
+      let c=0;const done=()=>{txt.textContent=t;cur.remove();b.onclick=null;later(next,strong?1400:1000);};
       b.onclick=()=>{clear();done();};
-      const type=()=>{c+=2;txt.textContent=t.slice(0,c);if(c>=t.length)done();else later(type,24);};
-      later(type,250);
+      const type=()=>{c+=1;txt.textContent=t.slice(0,c);if(c>=t.length)done();else later(type,32);};
+      if(RMO){later(done,900);}else later(type,350);
     };
     next();
   }
