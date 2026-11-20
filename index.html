@@ -6,6 +6,8 @@
 <title>Opération Siège New York (version B)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style id="gt-base">html{font-size:calc(100% * var(--et,1))}html.grand-texte{--et:1.25}</style>
+<script>try{if(localStorage.getItem("jeux-grand-texte")==="1")document.documentElement.classList.add("grand-texte");}catch(e){}</script>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -29,7 +31,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:calc(16px * var(--et,1));line-height:1.5}
 h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;text-wrap:balance;margin:0}
 h2{font-size:1.6rem;line-height:1.1}
 h3{font-size:1.08rem}
@@ -66,7 +68,7 @@ main{padding:18px 0 40px}
 /* Accueil */
 .hero{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:26px;align-items:start}
 .eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stamp)}
-.title{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.02;margin:6px 0 18px}
+.title{font-size:clamp(2rem,calc(4.6vw * var(--et,1)),3.2rem);line-height:1.02;margin:6px 0 18px}
 .idcard{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;box-shadow:0 10px 24px -14px #16223B66}
 .idcard .strip{background:var(--ink);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.75rem;letter-spacing:.1em}
 .idcard .strip b{color:var(--cab);font-weight:600}
@@ -92,7 +94,7 @@ main{padding:18px 0 40px}
 #map{width:100%;height:auto;display:block;border-radius:2px;background:var(--water)}
 .pin{cursor:pointer}
 .pin circle.body{stroke:var(--ink);stroke-width:2.2;fill:var(--cab)}
-.pin text{font-family:var(--display);font-size:13px;text-anchor:middle;dominant-baseline:central;pointer-events:none;fill:var(--ink)}
+.pin text{font-family:var(--display);font-size:calc(13px * var(--et,1));text-anchor:middle;dominant-baseline:central;pointer-events:none;fill:var(--ink)}
 .pin.done circle.body{fill:var(--ink)}
 .pin.done text{fill:var(--cab)}
 .pin:hover circle.body,.pin:focus circle.body{stroke:var(--stamp);stroke-width:3.5}
@@ -132,7 +134,7 @@ main{padding:18px 0 40px}
 /* Lieu */
 .lhead{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px;margin-bottom:18px}
 .lhead .num{font-family:var(--mono);font-size:.8rem;color:var(--muted);letter-spacing:.06em}
-.lhead h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+.lhead h2{font-size:clamp(1.7rem,calc(3.6vw * var(--et,1)),2.4rem)}
 .lgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:start}
 figure{margin:0}
 .photo{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden}
@@ -152,7 +154,7 @@ figure{margin:0}
 .cmp td{vertical-align:top;font-size:.86rem}
 .cmp td:first-child{width:24%}
 .src{border-top:1px dashed var(--line);padding:7px 14px;font-size:.78rem;color:var(--muted);font-style:italic}
-.trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;font-size:1px;color:transparent}
+.trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;font-size:calc(1px * var(--et,1));color:transparent}
 .extract img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain;background:#fff}
 .mission{background:var(--ink);color:#fff;border-radius:4px;padding:16px 18px;display:grid;gap:14px;margin-top:16px}
 .mission .lab{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;color:var(--cab);text-transform:uppercase}
@@ -198,7 +200,7 @@ body.prof .key{display:block}
 .road .start{position:absolute;left:10px;top:8px;color:#fff;font-family:var(--mono);font-size:.75rem}
 #taxi{position:absolute;top:22px;left:8px;width:70px;height:36px;transition:left .5s ease}
 @media (prefers-reduced-motion:reduce){#taxi{transition:none}}
-.taxiq{max-width:860px;margin-left:auto!important;margin-right:auto!important;font-family:var(--display);font-size:clamp(1.05rem,2.2vw,1.35rem);background:var(--card);border:1px solid var(--line);border-left:6px solid var(--cab);border-radius:4px;padding:12px 16px;margin-bottom:10px;min-height:3.2em}
+.taxiq{max-width:860px;margin-left:auto!important;margin-right:auto!important;font-family:var(--display);font-size:clamp(1.05rem,calc(2.2vw * var(--et,1)),1.35rem);background:var(--card);border:1px solid var(--line);border-left:6px solid var(--cab);border-radius:4px;padding:12px 16px;margin-bottom:10px;min-height:3.2em}
 .canvaswrap{background:#16223B;border-radius:6px;overflow:hidden;max-width:860px;margin:0 auto}
 #taxiCanvas{display:block;width:100%;height:auto;touch-action:manipulation;cursor:pointer}
 .meter{background:var(--cab)!important;color:var(--ink)!important;font-weight:600}
@@ -261,7 +263,7 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 .qtext{font-size:1rem;line-height:1.4}
 .mission .won,.mission .key{margin:12px 18px}
 .lhead{margin-bottom:14px!important;padding-bottom:10px!important}
-.lhead h2{font-size:clamp(1.6rem,2.6vw,2.1rem)!important}
+.lhead h2{font-size:clamp(1.6rem,calc(2.6vw * var(--et,1)),2.1rem)!important}
 .stepchip{font-family:var(--mono);font-size:.78rem;border:1.5px dashed var(--muted);border-radius:999px;padding:4px 10px;color:var(--muted)}
 .stepchip.ok{border-style:solid;border-color:var(--good);background:#DDF1E5;color:var(--good);font-weight:600}
 @media (max-width:1000px){.lgrid{grid-template-columns:1fr!important}.mission{position:static;max-height:none}.photorow{grid-template-columns:1fr}}
@@ -291,7 +293,7 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 .pin circle.body{fill:#fff;stroke:var(--ink);stroke-width:2.2}
 .pin .ico{color:var(--ink)}
 .pin circle.badge{fill:var(--cab);stroke:var(--ink);stroke-width:1.5}
-.pin text{font-size:12px!important;font-family:var(--body)!important;font-weight:700}
+.pin text{font-size:calc(12px * var(--et,1))!important;font-family:var(--body)!important;font-weight:700}
 .pin.done circle.body{fill:var(--ink)}
 .pin.done .ico{color:var(--cab)}
 .pin.done circle.badge{fill:#9BE3B8}
@@ -398,10 +400,10 @@ footer{padding:10px 0 40px;color:var(--muted);font-size:.78rem}
 #volmap .state{fill:#F6F1E3;stroke:#B9B29C;stroke-width:.6;vector-effect:non-scaling-stroke}
 #volmap .state.ny{fill:#F4B400;stroke:#16223B;stroke-width:1.4}
 #volmap .route{fill:none;stroke:#C8283C;stroke-width:3;stroke-dasharray:7 5;vector-effect:non-scaling-stroke}
-#volmap .lbl{font-family:var(--body);fill:#5B6476;font-size:13px;letter-spacing:.06em;text-anchor:middle;paint-order:stroke;stroke:#ffffffb0;stroke-width:3px}
+#volmap .lbl{font-family:var(--body);fill:#5B6476;font-size:calc(13px * var(--et,1));letter-spacing:.06em;text-anchor:middle;paint-order:stroke;stroke:#ffffffb0;stroke-width:3px}
 #volmap .lbl.sea{fill:#3E6E86;font-style:italic;stroke:none}
-#volmap .lbl.big{font-family:var(--display);fill:#16223B;font-size:15px}
-#volmap .city text{font-family:var(--body);font-weight:700;font-size:13px;fill:#16223B;paint-order:stroke;stroke:#fff;stroke-width:3.5px}
+#volmap .lbl.big{font-family:var(--display);fill:#16223B;font-size:calc(15px * var(--et,1))}
+#volmap .city text{font-family:var(--body);font-weight:700;font-size:calc(13px * var(--et,1));fill:#16223B;paint-order:stroke;stroke:#fff;stroke-width:3.5px}
 .volinfo{position:absolute;right:14px;bottom:14px;max-width:360px;background:#fffffff2;border-left:5px solid var(--cab);border-radius:4px;padding:12px 14px;font-size:.92rem;display:none;box-shadow:0 8px 20px -10px #16223B88}
 .volinfo.show{display:grid;gap:6px}
 @media (max-width:700px){.volinfo{position:static;max-width:none;border-radius:0}}
@@ -786,7 +788,7 @@ function buildMap(){
   const x0=Math.min(...xs)-30,y0=Math.min(...ys)-30,w=Math.max(...xs)-x0+30,h=Math.max(...ys)-y0+30;
   svg.setAttribute("viewBox",`${x0.toFixed(0)} ${y0.toFixed(0)} ${w.toFixed(0)} ${h.toFixed(0)}`);
   const lbl=(p,t,css,a)=>{const r=rot(p);return `<text x="${r[0].toFixed(1)}" y="${r[1].toFixed(1)}" text-anchor="${a||"middle"}" style="${css}">${t}</text>`;};
-  const B2="font-family:var(--display);font-size:13px;letter-spacing:.12em;fill:#16223B88",L="font-family:var(--mono);font-size:11px;letter-spacing:.15em;fill:#8C8571",W="font-family:var(--body);font-style:italic;font-size:12px;fill:#3E6E86";
+  const B2="font-family:var(--display);font-size:calc(13px * var(--et,1));letter-spacing:.12em;fill:#16223B88",L="font-family:var(--mono);font-size:calc(11px * var(--et,1));letter-spacing:.15em;fill:#8C8571",W="font-family:var(--body);font-style:italic;font-size:calc(12px * var(--et,1));fill:#3E6E86";
   let s=`<rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="var(--water)"/>
   <polygon points="${pts(NJ)}" fill="#DAD6CC"/><polygon points="${pts(EAST)}" fill="#EDE7D6"/><polygon points="${pts(SI)}" fill="#EDE7D6"/><polygon points="${pts(SOUND)}" fill="var(--water)"/>
   <polyline points="${pts([[436,760],[520,792],[545,860],[532,1010]])}" fill="none" stroke="#8C8571" stroke-width="1.5" stroke-dasharray="5 4"/>
@@ -795,21 +797,21 @@ function buildMap(){
   ${(()=>{const BRG=[[[367,852],[422,857],"Pont de Brooklyn"],[[386,834],[430,841],""],[[400,796],[442,800],"Pont de Williamsburg"],[[388,588],[425,590],"Pont de Queensboro"],[[232,178],[281,180],"Pont George-Washington"],[[274,1062],[366,1040],"Pont Verrazzano"],[[150,958],[163,1014],""],[[395,262],[428,292],"Pont RFK"]];
     const TUN=[[[214,640],[264,640],"Tunnel Lincoln"],[[222,790],[276,790],"Tunnel Holland"]];
     const ln=(a,b,st)=>{const A=rot(a),B=rot(b);return `<line x1="${A[0].toFixed(1)}" y1="${A[1].toFixed(1)}" x2="${B[0].toFixed(1)}" y2="${B[1].toFixed(1)}" style="${st}"/>`;};
-    const T="font-family:var(--body);font-size:8.5px;font-weight:700;fill:#16223B;paint-order:stroke;stroke:#fff;stroke-width:2.5px";
+    const T="font-family:var(--body);font-size:calc(8.5px * var(--et,1));font-weight:700;fill:#16223B;paint-order:stroke;stroke:#fff;stroke-width:2.5px";
     return BRG.map(([a,b,n])=>ln(a,b,"stroke:#5B6476;stroke-width:3.5;stroke-linecap:round")+(n?lbl([(a[0]+b[0])/2,(a[1]+b[1])/2-7],n,T):"")).join("")
       +TUN.map(([a,b,n])=>ln(a,b,"stroke:#C8283C;stroke-width:2;stroke-dasharray:4 3")+lbl([(a[0]+b[0])/2,(a[1]+b[1])/2-6],n,T.replace("#16223B","#C8283C"))).join("");})()}
   ${lbl([110,560],"NEW JERSEY · autre État",L)}${lbl([560,640],"QUEENS",B2)}${lbl([470,975],"BROOKLYN",B2)}${lbl([420,120],"BRONX",B2)}${lbl([205,1110],"STATEN ISLAND",B2)}
-  ${lbl([350,350],"MANHATTAN","font-family:var(--display);font-size:13px;letter-spacing:.12em;fill:#16223B88","start")}
+  ${lbl([350,350],"MANHATTAN","font-family:var(--display);font-size:calc(13px * var(--et,1));letter-spacing:.12em;fill:#16223B88","start")}
   ${lbl([233,470],"Hudson",W)}${lbl([412,690],"East River",W,"start")}${lbl([300,985],"Upper Bay",W)}
-  ${lbl([311,470],"Central Park","font-family:var(--body);font-size:9.5px;fill:#3D5A2A")}
+  ${lbl([311,470],"Central Park","font-family:var(--body);font-size:calc(9.5px * var(--et,1));fill:#3D5A2A")}
   `;
   const bx=x0+18,by=y0+h-22,km=39;
-  s+=`<rect x="${bx-6}" y="${by-18}" width="${2*km+46}" height="30" fill="#ffffffcc" rx="2"/><line x1="${bx}" y1="${by}" x2="${bx+2*km}" y2="${by}" stroke="var(--ink)" stroke-width="3"/><text x="${bx+2*km+6}" y="${by+4}" style="font-family:var(--mono);font-size:10.5px;fill:#16223B">2 km</text>`;
+  s+=`<rect x="${bx-6}" y="${by-18}" width="${2*km+46}" height="30" fill="#ffffffcc" rx="2"/><line x1="${bx}" y1="${by}" x2="${bx+2*km}" y2="${by}" stroke="var(--ink)" stroke-width="3"/><text x="${bx+2*km+6}" y="${by+4}" style="font-family:var(--mono);font-size:calc(10.5px * var(--et,1));fill:#16223B">2 km</text>`;
   const nx=x0+w-30,ny=y0+34;
-  s+=`<path d="M${nx} ${ny-20} L${nx+8} ${ny+4} L${nx} ${ny-2} L${nx-8} ${ny+4}Z" fill="var(--ink)"/><text x="${nx}" y="${ny+20}" text-anchor="middle" style="font-family:var(--display);font-size:13px;fill:#16223B">N</text>`;
+  s+=`<path d="M${nx} ${ny-20} L${nx+8} ${ny+4} L${nx} ${ny-2} L${nx-8} ${ny+4}Z" fill="var(--ink)"/><text x="${nx}" y="${ny+20}" text-anchor="middle" style="font-family:var(--display);font-size:calc(13px * var(--et,1));fill:#16223B">N</text>`;
   const j=rot(PL[0].pos);
-  s+=`<text x="${j[0].toFixed(1)}" y="${(j[1]+30).toFixed(1)}" text-anchor="middle" style="font-family:var(--body);font-size:10.5px;fill:#16223B">✈ JFK (à 20 km)</text>`;
-  const pn=rot(PL[1].pos);s+=`<text x="${(pn[0]+18).toFixed(1)}" y="${(pn[1]+4).toFixed(1)}" style="font-family:var(--body);font-size:10.5px;fill:#16223B">⚓ Port de Newark (à 12 km)</text>`;
+  s+=`<text x="${j[0].toFixed(1)}" y="${(j[1]+30).toFixed(1)}" text-anchor="middle" style="font-family:var(--body);font-size:calc(10.5px * var(--et,1));fill:#16223B">✈ JFK (à 20 km)</text>`;
+  const pn=rot(PL[1].pos);s+=`<text x="${(pn[0]+18).toFixed(1)}" y="${(pn[1]+4).toFixed(1)}" style="font-family:var(--body);font-size:calc(10.5px * var(--et,1));fill:#16223B">⚓ Port de Newark (à 12 km)</text>`;
   PL.forEach((p,i)=>{const r=rot(p.pos),X=r[0].toFixed(1),Y=r[1].toFixed(1);s+=`<g class="pin" data-id="${p.id}" tabindex="0" role="link" aria-label="${i+1}. ${esc(p.name)}"><circle class="body" cx="${X}" cy="${Y}" r="20"/><g class="ico" transform="translate(${(r[0]-13).toFixed(1)} ${(r[1]-13).toFixed(1)}) scale(1.0833)">${ICON[p.id]}</g><circle class="badge" cx="${(r[0]+16).toFixed(1)}" cy="${(r[1]-16).toFixed(1)}" r="9.5"/><text x="${(r[0]+16).toFixed(1)}" y="${(r[1]-15.5).toFixed(1)}">${i+1}</text><title>${i+1}. ${esc(p.name)}</title></g>`;});
   svg.innerHTML=s;
   svg.querySelectorAll(".pin").forEach(g=>{
@@ -1424,6 +1426,31 @@ function route(){
 }
 buildMap();
 window.addEventListener("hashchange",route);route();
+</script>
+
+<!-- Bouton « Grandes lettres » : agrandit tous les textes de 25 % ; le choix est gardé d'une visite et d'un jeu à l'autre -->
+<style id="gt-style">
+#gt-btn{position:fixed;z-index:2147483000;left:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px;border-radius:999px;border:2px solid #1d2230;background:#fffdf7;color:#1d2230;font:700 15px/1.1 "Atkinson Hyperlegible",Verdana,Arial,sans-serif;letter-spacing:0;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+#gt-btn:hover{background:#efe9da}
+#gt-btn[aria-pressed="true"]{background:#1d2230;color:#fff}
+#gt-btn:focus-visible{outline:3px solid #2747a8;outline-offset:2px}
+#gt-btn b{font-size:17px}
+@media print{#gt-btn{display:none}}
+</style>
+<button type="button" id="gt-btn" aria-pressed="false" title="Agrandir les lettres de tous les textes"><b aria-hidden="true">A+</b> Grandes lettres</button>
+<script>
+(function(){
+  var r=document.documentElement,b=document.getElementById("gt-btn");
+  function maj(){b.setAttribute("aria-pressed",r.classList.contains("grand-texte")?"true":"false");}
+  maj();
+  b.addEventListener("click",function(){
+    var on=!r.classList.contains("grand-texte");
+    r.classList.toggle("grand-texte",on);
+    try{localStorage.setItem("jeux-grand-texte",on?"1":"0");}catch(e){}
+    maj();
+    try{window.dispatchEvent(new Event("resize"));}catch(e){}
+  });
+})();
 </script>
 </body>
 </html>
